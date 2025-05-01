@@ -7,7 +7,6 @@ import * as NavigationMenu from "@radix-ui/react-navigation-menu";
 import React, { FC, useEffect, useState } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import clsx from "clsx";
-import * as Dialog from "@radix-ui/react-dialog";
 import * as Collapsible from "@radix-ui/react-collapsible";
 import { NavbarData, navbarData } from "@/utils/constants/navbar";
 import ThemeSwitcher from "@/components/atoms/theme-switcher";
@@ -16,14 +15,15 @@ import { useScrollPosition } from "@/hooks/use-scroll-position";
 import { useTranslation } from "react-i18next";
 import LanguageSwitcher from "@/components/atoms/language-switcher";
 import Menu from "@/assets/icons/menu.svg";
-import Add from "@/assets/icons/add.svg";
 import ArrorDown from "@/assets/icons/arrow-down.svg";
+import { AnimatePresence, motion } from "framer-motion";
 
 const Navbar = () => {
   const router = useRouter();
   const { colorScheme } = useColorScheme((state) => state);
   const { scrollY } = useScrollPosition();
   const [activeHash, setActiveHash] = useState("home");
+  const [showMenu, setShowMenu] = useState(false);
 
   useEffect(() => {
     let ticking = false;
@@ -84,8 +84,14 @@ const Navbar = () => {
           <ThemeSwitcher />
           <LanguageSwitcher />
         </div>
-        <MobileMenu />
+        <button
+          className={classNames.mobileMenu}
+          onClick={() => setShowMenu(true)}
+        >
+          <Menu />
+        </button>
       </div>
+      <AnimatePresence>{showMenu && <MobileMenuContainer />}</AnimatePresence>
     </div>
   );
 };
@@ -159,41 +165,24 @@ const ListItem: FC<NavbarData> = (props) => {
 
 ListItem.displayName = "ListItem";
 
-const MobileMenu = () => {
-  const [open, setOpen] = React.useState(false);
-
+const MobileMenuContainer = () => {
   return (
-    <Dialog.Root open={open} onOpenChange={setOpen}>
-      <Dialog.Trigger asChild className={classNames.mobileMenuTrigger}>
-        <button>
-          <Menu />
-        </button>
-      </Dialog.Trigger>
-      <Dialog.Portal>
-        <Dialog.Overlay className={classNames.DialogOverlay} />
-        <Dialog.Content className={classNames.DialogContent}>
-          <div className={classNames.menu}>
-            {navbarData.map((item) => (
-              <MobileMenuItem
-                key={item.path + (item.hash ?? "")}
-                {...item}
-                onClose={() => setOpen(false)}
-              />
-            ))}
-          </div>
-          <Dialog.Close asChild>
-            <button className={classNames.IconButton} aria-label="Close">
-              <Add />
-            </button>
-          </Dialog.Close>
-        </Dialog.Content>
-      </Dialog.Portal>
-    </Dialog.Root>
+    <motion.div
+      initial={{ y: "50px", opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      exit={{ y: "-50px", opacity: 0 }}
+      className={classNames["mobile-menu-container"]}
+    >
+      <div className={classNames.menu}>
+        {navbarData.map((item) => (
+          <MobileMenuItem key={item.path + (item.hash ?? "")} {...item} />
+        ))}
+      </div>
+    </motion.div>
   );
 };
 
 type MobileMenuItemProps = NavbarData & {
-  onClose: () => void;
   className?: string;
 };
 const MobileMenuItem: FC<MobileMenuItemProps> = (props) => {
@@ -202,7 +191,6 @@ const MobileMenuItem: FC<MobileMenuItemProps> = (props) => {
   const onClickItem = () => {
     if (!props.items?.length) {
       router.push(props.path);
-      props.onClose();
     }
   };
   if (props.items?.length)
@@ -224,7 +212,6 @@ const MobileMenuItem: FC<MobileMenuItemProps> = (props) => {
                 key={subItem.path}
                 {...subItem}
                 className={classNames.subItem}
-                onClose={props.onClose}
               />
             ))}
           </div>

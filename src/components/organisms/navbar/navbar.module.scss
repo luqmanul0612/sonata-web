@@ -27,7 +27,7 @@
     height: 77px;
     padding: 0 10px;
     box-sizing: border-box;
-    width: 100%;
+    @include screen.main-width;
 
     .actions {
       display: none;
@@ -47,6 +47,21 @@
           height: 20px;
         }
       }
+    }
+    .mobileMenu {
+      @include screen.breakpoint-xl {
+        display: none;
+      }
+      width: 24px;
+      min-height: 24px;
+      border: none;
+      background-color: transparent;
+      outline: none;
+      color: colors.$slate-900;
+      :global(body.dark) & {
+        color: colors.$slate-100;
+      }
+      cursor: pointer;
     }
     .NavigationMenuRoot {
       display: none;
@@ -285,45 +300,9 @@
   }
 }
 
-.mobileMenuTrigger {
-  display: unset;
-  @include screen.breakpoint-xl {
-    display: none;
-  }
-  border: none;
-  background-color: transparent;
-  width: 24px;
-  height: 24px;
-  color: colors.$slate-900;
-  :global(body.dark) & {
-    color: colors.$slate-100;
-  }
-  outline: none;
-  cursor: pointer;
-  color: colors.$slate-900;
-}
-
-.DialogOverlay {
-  background-color: #000000d8;
-  position: fixed;
-  inset: 0;
-  animation: overlayShow 150ms cubic-bezier(0.16, 1, 0.3, 1);
-  z-index: 100;
-}
-
-.DialogContent {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  padding: 25px;
-  box-sizing: border-box;
-  animation: contentShow 150ms cubic-bezier(0.16, 1, 0.3, 1);
-  z-index: 101;
-  outline: none;
+.mobile-menu-container {
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
   background-color: #f6f9ff;
   :global(body.dark) & {
     background-color: colors.$slate-900;
