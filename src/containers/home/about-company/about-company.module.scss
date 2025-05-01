@@ -71,7 +71,7 @@
             height: 24px;
           }
           .text {
-            font-size: 12px;
+            font-size: 13px;
             font-weight: 400;
             color: colors.$slate-900;
             :global(body.dark) & {
@@ -92,6 +92,8 @@
         max-width: 800px;
         text-align: center;
         @include screen.breakpoint-xl {
+          font-size: 14px;
+          font-weight: 400;
           max-width: unset;
           text-align: start;
         }

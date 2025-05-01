@@ -11,10 +11,10 @@
   top: 0;
   box-sizing: border-box;
   z-index: 100;
-  background-color: #f6f9ffc6;
+  background-color: #f6f9ffdc;
   box-sizing: border-box;
   :global(body.dark) & {
-    background-color: #0f172acb;
+    background-color: #0f172ad3;
   }
   transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
   &.active {
