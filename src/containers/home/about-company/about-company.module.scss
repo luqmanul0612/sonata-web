@@ -10,7 +10,6 @@
     flex-direction: column;
     align-items: center;
     @include screen.main-width;
-    min-height: 100dvh;
     gap: 40px;
     padding: 0 10px;
     box-sizing: border-box;
@@ -92,7 +91,7 @@
         max-width: 800px;
         text-align: center;
         @include screen.breakpoint-xl {
-          font-size: 14px;
+          font-size: 13px;
           font-weight: 400;
           max-width: unset;
           text-align: start;
