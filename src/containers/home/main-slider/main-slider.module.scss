@@ -2,7 +2,6 @@
 @use "/src/utils/styles/screen.scss";
 
 .main {
-  margin-top: 77px;
   opacity: 0;
   position: relative;
   &.loaded {
@@ -13,7 +12,7 @@
     display: flex;
     justify-content: center;
     width: 100dvw;
-    height: calc(100dvh - 77px);
+    height: 100dvh;
     position: relative;
     .content {
       @include screen.main-width;

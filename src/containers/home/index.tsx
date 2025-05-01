@@ -4,11 +4,11 @@ import News from "./news";
 
 const HomeContainer = () => {
   return (
-    <>
+    <div>
       <MainSlider />
       <AboutCompany />
       <News />
-    </>
+    </div>
   );
 };
 
