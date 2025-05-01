@@ -1,6 +1,5 @@
 "use client";
 
-import { AlignRight, ChevronDown, X } from "lucide-react";
 import classNames from "./navbar.module.scss";
 import Logo from "@/assets/icons/logo.svg";
 import LogoDark from "@/assets/icons/logo-dark.svg";
@@ -16,6 +15,9 @@ import useColorScheme from "@/utils/state/colorScheme";
 import { useScrollPosition } from "@/hooks/use-scroll-position";
 import { useTranslation } from "react-i18next";
 import LanguageSwitcher from "@/components/atoms/language-switcher";
+import Menu from "@/assets/icons/menu.svg";
+import Add from "@/assets/icons/add.svg";
+import ArrorDown from "@/assets/icons/arrow-down.svg";
 
 const Navbar = () => {
   const router = useRouter();
@@ -58,11 +60,10 @@ const Navbar = () => {
     <div
       className={clsx(classNames.navbar, { [classNames.active]: scrollY > 90 })}
     >
-      <div className={classNames.content}>
+      <div className={classNames["nav-content"]}>
         <div className={classNames.logo} onClick={() => router.push("/")}>
           {colorScheme === "light" ? <Logo /> : <LogoDark />}
         </div>
-        <MobileMenu />
         <NavigationMenu.Root className={classNames.NavigationMenuRoot}>
           <NavigationMenu.List className={classNames.NavigationMenuList}>
             {navbarData.map((item) => (
@@ -83,6 +84,7 @@ const Navbar = () => {
           <ThemeSwitcher />
           <LanguageSwitcher />
         </div>
+        <MobileMenu />
       </div>
     </div>
   );
@@ -120,7 +122,7 @@ const NavigationMenuItem: FC<NavigationMenuItemProps> = (props) => {
             [classNames.active]: isActive,
           })}
         >
-          {t(props.name)} <ChevronDown size={18} aria-hidden />
+          {t(props.name)} <ArrorDown aria-hidden />
         </NavigationMenu.Trigger>
         <NavigationMenu.Content className={classNames.NavigationMenuContent}>
           <ul className={classNames.ListWrapper}>
@@ -164,14 +166,12 @@ const MobileMenu = () => {
     <Dialog.Root open={open} onOpenChange={setOpen}>
       <Dialog.Trigger asChild className={classNames.mobileMenuTrigger}>
         <button>
-          <AlignRight size={28} />
+          <Menu />
         </button>
       </Dialog.Trigger>
       <Dialog.Portal>
         <Dialog.Overlay className={classNames.DialogOverlay} />
         <Dialog.Content className={classNames.DialogContent}>
-          <Dialog.Title style={{ display: "none" }} />
-          <Dialog.Description style={{ display: "none" }} />
           <div className={classNames.menu}>
             {navbarData.map((item) => (
               <MobileMenuItem
@@ -183,7 +183,7 @@ const MobileMenu = () => {
           </div>
           <Dialog.Close asChild>
             <button className={classNames.IconButton} aria-label="Close">
-              <X size={30} />
+              <Add />
             </button>
           </Dialog.Close>
         </Dialog.Content>
@@ -198,6 +198,7 @@ type MobileMenuItemProps = NavbarData & {
 };
 const MobileMenuItem: FC<MobileMenuItemProps> = (props) => {
   const router = useRouter();
+  const { t } = useTranslation();
   const onClickItem = () => {
     if (!props.items?.length) {
       router.push(props.path);
@@ -212,8 +213,8 @@ const MobileMenuItem: FC<MobileMenuItemProps> = (props) => {
             className={clsx(classNames.mobileMenuItem, props.className)}
             onClick={onClickItem}
           >
-            {!!props.items?.length && <ChevronDown size={20} aria-hidden />}
-            <div>{props.name}</div>
+            {!!props.items?.length && <ArrorDown aria-hidden />}
+            <div>{t(props.name)}</div>
           </div>
         </Collapsible.Trigger>
         <Collapsible.Content className={classNames.mobileMenuContent}>
@@ -235,8 +236,8 @@ const MobileMenuItem: FC<MobileMenuItemProps> = (props) => {
       className={clsx(classNames.mobileMenuItem, props.className)}
       onClick={onClickItem}
     >
-      {!!props.items?.length && <ChevronDown size={20} aria-hidden />}
-      <div>{props.name}</div>
+      {!!props.items?.length && <ArrorDown aria-hidden />}
+      <div>{t(props.name)}</div>
     </div>
   );
 };

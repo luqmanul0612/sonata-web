@@ -4,8 +4,7 @@
 .navbar {
   display: flex;
   flex-direction: column;
-  max-width: 100vw;
-  width: 100vw;
+  width: 100%;
   align-items: center;
   position: fixed;
   left: 0;
@@ -13,6 +12,7 @@
   box-sizing: border-box;
   z-index: 100;
   background-color: #f6f9ff;
+  box-sizing: border-box;
   :global(body.dark) & {
     background-color: colors.$slate-900;
   }
@@ -20,240 +20,247 @@
   &.active {
     box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
   }
-  .content {
+  .nav-content {
     display: flex;
     align-items: center;
     justify-content: space-between;
     height: 77px;
-    @include screen.main-width;
-  }
-  .actions {
-    display: flex;
-    gap: 10px;
-  }
-  .logo {
-    cursor: pointer;
-    svg {
-      height: 25px;
-      @include screen.breakpoint-lg {
-        height: 20px;
-        width: auto;
+    padding: 0 10px;
+    box-sizing: border-box;
+    width: 100%;
+
+    .actions {
+      display: none;
+      height: 100%;
+      align-items: center;
+      gap: 10px;
+      @include screen.breakpoint-xl {
+        display: flex;
       }
     }
-  }
-  box-sizing: border-box;
-  .NavigationMenuRoot {
-    display: none;
-    height: fit-content;
-    position: relative;
-
-    @include screen.breakpoint-lg {
-      display: flex;
-    }
-    .NavigationMenuList {
-      display: flex;
-      justify-content: center;
-      padding: 4px;
-      box-sizing: border-box;
-      border-radius: 6px;
-      list-style: none;
-      margin: 0;
-    }
-
-    .NavigationMenuTrigger,
-    .NavigationMenuLink {
-      padding: 8px 12px;
-      box-sizing: border-box;
-      outline: none;
-      user-select: none;
-      font-size: 14px;
-      font-weight: 400;
-      line-height: 1;
-      border: none;
-      color: colors.$slate-900;
-      :global(body.dark) & {
-        color: colors.$slate-100;
-      }
-      background-color: transparent;
-      transition: color 0.2s ease-in-out;
+    .logo {
       cursor: pointer;
-      &.active {
-        font-weight: 700;
-        color: colors.$blue-500;
-        :global(body.dark) & {
-          color: colors.$blue-300;
+      svg {
+        height: 18px;
+        width: auto;
+        @include screen.breakpoint-xl {
+          height: 20px;
         }
       }
     }
-    .NavigationMenuTrigger:focus,
-    .NavigationMenuLink:focus {
-      color: colors.$blue-500;
-    }
-    .NavigationMenuTrigger:hover,
-    .NavigationMenuLink:hover {
-      color: colors.$blue-500;
-    }
-
-    .NavigationMenuTrigger {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 2px;
-    }
-    .NavigationMenuItem {
+    .NavigationMenuRoot {
+      display: none;
+      height: fit-content;
       position: relative;
-    }
 
-    .NavigationMenuContent {
-      position: absolute;
-      top: 100%;
-      right: 0;
-      width: 100%;
-      margin-top: 10px;
-      animation-duration: 250ms;
-      animation-timing-function: ease;
-      &[data-state="open"] {
-        animation: fadeIn 200ms ease;
-      }
-      &[data-state="close"] {
-        animation: fadeOut 200ms ease;
-      }
-    }
-    .ListWrapper {
-      display: flex;
-      flex-direction: column;
-      width: 450px;
-      list-style: none;
-      background-color: #ffffffee;
-      box-shadow: rgba(0, 0, 0, 0.2) 0px 18px 50px -10px;
-      padding: 0;
-      padding-bottom: 5px;
-      margin: 0;
-      overflow: hidden;
-      gap: 5px;
-      position: relative;
-      &::before {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        height: 5px;
-        min-width: 100%;
-        background-color: colors.$blue-500;
-      }
-      .ListItem {
+      @include screen.breakpoint-xl {
         display: flex;
-        align-items: center;
-        list-style-type: none;
+      }
+      .NavigationMenuList {
+        display: flex;
+        justify-content: center;
+        padding: 4px;
+        box-sizing: border-box;
+        border-radius: 6px;
+        list-style: none;
         margin: 0;
-        padding: 15px 20px;
+      }
+
+      .NavigationMenuTrigger,
+      .NavigationMenuLink {
+        padding: 8px 12px;
+        box-sizing: border-box;
+        outline: none;
+        user-select: none;
         font-size: 14px;
         font-weight: 400;
+        line-height: 1;
+        border: none;
         color: colors.$slate-900;
-        cursor: pointer;
-        &:hover {
-          background-color: colors.$blue-100;
-          color: colors.$blue-700;
+        :global(body.dark) & {
+          color: colors.$slate-100;
         }
-        transition: 0.1s background-color ease-in-out, 0.1s color ease-in-out;
+        background-color: transparent;
+        transition: color 0.2s ease-in-out;
+        cursor: pointer;
+        &.active {
+          font-weight: 700;
+          color: colors.$blue-500;
+          :global(body.dark) & {
+            color: colors.$blue-300;
+          }
+        }
       }
-    }
+      .NavigationMenuTrigger:focus,
+      .NavigationMenuLink:focus {
+        color: colors.$blue-500;
+      }
+      .NavigationMenuTrigger:hover,
+      .NavigationMenuLink:hover {
+        color: colors.$blue-500;
+      }
 
-    .ListItemLink {
-      display: block;
-      outline: none;
-      text-decoration: none;
-      user-select: none;
-      padding: 12px;
-      border-radius: 6px;
-      line-height: 1;
-      font-size: 19px;
-      font-weight: 500;
-    }
-    .ListItemLink:focus {
-      box-shadow: 0 0 0 2px var(--violet-7);
-    }
-    .ListItemLink:hover {
-      background-color: var(--mauve-3);
-    }
+      .NavigationMenuTrigger {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 2px;
+      }
+      .NavigationMenuItem {
+        position: relative;
+      }
 
-    .ListItemHeading {
-      font-weight: 500;
-      line-height: 1.2;
-      margin-bottom: 5px;
-      color: var(--violet-12);
-    }
+      .NavigationMenuContent {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 100%;
+        margin-top: 10px;
+        animation-duration: 250ms;
+        animation-timing-function: ease;
+        &[data-state="open"] {
+          animation: fadeIn 200ms ease;
+        }
+        &[data-state="close"] {
+          animation: fadeOut 200ms ease;
+        }
+      }
+      .ListWrapper {
+        display: flex;
+        flex-direction: column;
+        width: 450px;
+        list-style: none;
+        background-color: #ffffffee;
+        box-shadow: rgba(0, 0, 0, 0.2) 0px 18px 50px -10px;
+        padding: 0;
+        padding-bottom: 5px;
+        margin: 0;
+        overflow: hidden;
+        gap: 5px;
+        position: relative;
+        &::before {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          height: 5px;
+          min-width: 100%;
+          background-color: colors.$blue-500;
+        }
+        .ListItem {
+          display: flex;
+          align-items: center;
+          list-style-type: none;
+          margin: 0;
+          padding: 15px 20px;
+          font-size: 14px;
+          font-weight: 400;
+          color: colors.$slate-900;
+          cursor: pointer;
+          &:hover {
+            background-color: colors.$blue-100;
+            color: colors.$blue-700;
+          }
+          transition: 0.1s background-color ease-in-out, 0.1s color ease-in-out;
+        }
+      }
 
-    .ListItemText {
-      color: var(--mauve-11);
-      line-height: 1.4;
-      font-weight: initial;
-    }
+      .ListItemLink {
+        display: block;
+        outline: none;
+        text-decoration: none;
+        user-select: none;
+        padding: 12px;
+        border-radius: 6px;
+        line-height: 1;
+        font-size: 19px;
+        font-weight: 500;
+      }
+      .ListItemLink:focus {
+        box-shadow: 0 0 0 2px var(--violet-7);
+      }
+      .ListItemLink:hover {
+        background-color: var(--mauve-3);
+      }
 
-    .Callout {
-      display: flex;
-      justify-content: flex-end;
-      flex-direction: column;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(
-        135deg,
-        var(--purple-9) 0%,
-        var(--indigo-9) 100%
-      );
-      border-radius: 6px;
-      padding: 25px;
-      text-decoration: none;
-      outline: none;
-      user-select: none;
-    }
-    .Callout:focus {
-      box-shadow: 0 0 0 2px var(--violet-7);
-    }
+      .ListItemHeading {
+        font-weight: 500;
+        line-height: 1.2;
+        margin-bottom: 5px;
+        color: var(--violet-12);
+      }
 
-    .CalloutHeading {
-      color: white;
-      font-size: 18px;
-      font-weight: 500;
-      line-height: 1.2;
-      margin-top: 16px;
-      margin-bottom: 7px;
-    }
+      .ListItemText {
+        color: var(--mauve-11);
+        line-height: 1.4;
+        font-weight: initial;
+      }
 
-    .CalloutText {
-      color: var(--mauve-4);
-      font-size: 14px;
-      line-height: 1.3;
-    }
+      .Callout {
+        display: flex;
+        justify-content: flex-end;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          135deg,
+          var(--purple-9) 0%,
+          var(--indigo-9) 100%
+        );
+        border-radius: 6px;
+        padding: 25px;
+        text-decoration: none;
+        outline: none;
+        user-select: none;
+      }
+      .Callout:focus {
+        box-shadow: 0 0 0 2px var(--violet-7);
+      }
 
-    .ViewportPosition {
-      position: absolute;
-      display: flex;
-      justify-content: center;
-      width: 100%;
-      top: 100%;
-      left: 0;
-      perspective: 2000px;
-    }
+      .CalloutHeading {
+        color: white;
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 1.2;
+        margin-top: 16px;
+        margin-bottom: 7px;
+      }
 
-    .CaretDown {
-      position: relative;
-      color: var(--violet-10);
-      top: 1px;
-      transition: transform 250ms ease;
-    }
-    [data-state="open"] > .CaretDown {
-      transform: rotate(-180deg);
-    }
+      .CalloutText {
+        color: var(--mauve-4);
+        font-size: 14px;
+        line-height: 1.3;
+      }
 
-    .Arrow {
-      position: relative;
-      top: 70%;
-      background-color: white;
-      width: 10px;
-      height: 10px;
-      transform: rotate(45deg);
-      border-top-left-radius: 2px;
+      .ViewportPosition {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        top: 100%;
+        left: 0;
+        perspective: 2000px;
+      }
+
+      .CaretDown {
+        position: relative;
+        color: var(--violet-10);
+        top: 1px;
+        transition: transform 250ms ease;
+      }
+      [data-state="open"] > .CaretDown {
+        transform: rotate(-180deg);
+      }
+
+      .Arrow {
+        position: relative;
+        top: 70%;
+        background-color: white;
+        width: 10px;
+        height: 10px;
+        transform: rotate(45deg);
+        border-top-left-radius: 2px;
+      }
     }
   }
 }
@@ -280,18 +287,24 @@
 
 .mobileMenuTrigger {
   display: unset;
-  @include screen.breakpoint-lg {
+  @include screen.breakpoint-xl {
     display: none;
   }
   border: none;
-  outline: none;
   background-color: transparent;
+  width: 24px;
+  height: 24px;
+  color: colors.$slate-900;
+  :global(body.dark) & {
+    color: colors.$slate-100;
+  }
+  outline: none;
   cursor: pointer;
   color: colors.$slate-900;
 }
 
 .DialogOverlay {
-  background-color: #ffffffef;
+  background-color: #000000d8;
   position: fixed;
   inset: 0;
   animation: overlayShow 150ms cubic-bezier(0.16, 1, 0.3, 1);
@@ -300,10 +313,9 @@
 
 .DialogContent {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   padding: 25px;
   box-sizing: border-box;
   animation: contentShow 150ms cubic-bezier(0.16, 1, 0.3, 1);
@@ -312,6 +324,10 @@
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+  background-color: #f6f9ff;
+  :global(body.dark) & {
+    background-color: colors.$slate-900;
+  }
   .menu {
     display: flex;
     flex-direction: column;
