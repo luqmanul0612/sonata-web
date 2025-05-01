@@ -1,0 +1,50 @@
+@use "/src/utils/styles/colors.scss";
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  height: 77px;
+  width: 90px;
+  cursor: pointer;
+  .switcher {
+    display: flex;
+    align-items: center;
+    left: 0;
+    top: 50%;
+    transform: translate(-50%, 0);
+    position: absolute;
+    gap: 5px;
+    border-radius: 10px;
+    height: 38px;
+    padding: 0 10px;
+    transition: background-color 0.2s ease-in-out;
+    &:hover {
+      background-color: colors.$slate-200;
+      :global(body.dark) & {
+        background-color: colors.$slate-800;
+      }
+    }
+    .label {
+      font-size: 12px;
+      font-weight: 400;
+      color: colors.$slate-900;
+      :global(body.dark) & {
+        color: colors.$slate-100;
+      }
+    }
+    .sun {
+      color: #febc2e;
+      width: 24px;
+      height: 24px;
+    }
+    .moon {
+      color: #ededed;
+      width: 24px;
+      height: 24px;
+    }
+  }
+}

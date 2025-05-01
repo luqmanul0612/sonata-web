@@ -1,0 +1,64 @@
+@use "/src/utils/styles/colors.scss";
+
+.Button-root {
+  border: none;
+  display: flex;
+  gap: 9px;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 6px 6px colors.$blue-500 10;
+  box-sizing: border-box;
+  cursor: pointer;
+  position: relative;
+  font-weight: 700;
+  font-size: 14px;
+  padding: 0 20px;
+  box-sizing: border-box;
+  width: fit-content;
+  height: 48px;
+  min-width: 100px;
+  border-radius: 8px;
+  outline: none;
+  &.primary {
+    background-color: colors.$blue-600;
+    color: #fff;
+  }
+
+  &.secondary {
+    background-color: transparent;
+    border: 1px solid colors.$blue-600;
+    color: #fff;
+  }
+
+  &.secondary-white {
+    background-color: transparent;
+    border: 1px solid #fff;
+    color: #fff;
+    &:hover {
+      background-color: #fff;
+      color: colors.$blue-600;
+    }
+  }
+
+  &.primary {
+    background-color: colors.$blue-600;
+    color: #fff;
+    &:hover {
+      background-color: colors.$blue-700;
+      color: #fff;
+    }
+  }
+
+  &:disabled {
+    background-color: colors.$slate-300;
+    border: 1px solid colors.$slate-400;
+    color: colors.$slate-400;
+    cursor: not-allowed;
+  }
+
+  .Button-start-icon,
+  .Button-end-icon {
+    display: flex;
+  }
+  transition: 0.2s ease all;
+}
