@@ -139,8 +139,9 @@ const NavigationMenuItem: FC<NavigationMenuItemProps> = (props) => {
       className={clsx(classNames.NavigationMenuLink, {
         [classNames.active]: isActive,
       })}
+      asChild
     >
-      <div onClick={onClickItem}>{t(props.name)}</div>
+      <a onClick={onClickItem}>{t(props.name)}</a>
     </NavigationMenu.Link>
   );
 };

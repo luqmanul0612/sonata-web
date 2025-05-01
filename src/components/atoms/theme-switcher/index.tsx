@@ -1,3 +1,5 @@
+"use client";
+
 /* eslint-disable react-hooks/exhaustive-deps */
 import useColorScheme from "@/utils/state/colorScheme";
 import { motion, AnimatePresence } from "framer-motion";
@@ -12,12 +14,12 @@ const ThemeSwitcher: FC = () => {
   useLayoutEffect(() => {
     const systemColorScheme = window.matchMedia("(prefers-color-scheme: dark)");
     const isDark = systemColorScheme.matches;
-    const {
-      state: { colorScheme },
-    } = JSON.parse(localStorage.getItem("color-scheme") ?? "{}");
-    if (!colorScheme)
+    const storage = JSON.parse(localStorage.getItem("color-scheme") || "{}");
+    if (!storage?.state?.colorScheme)
       setColorScheme({ colorScheme: isDark ? "dark" : "light" });
-    document.body.classList.add(colorScheme ?? (isDark ? "dark" : "light"));
+    document.body.classList.add(
+      storage?.state?.colorScheme ?? (isDark ? "dark" : "light")
+    );
   }, []);
 
   return (
