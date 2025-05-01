@@ -9,13 +9,9 @@ const AboutCompany = () => {
   return (
     <section id="about" className={classNames.main}>
       <div className={classNames.content}>
-        <Image
-          src={employes}
-          width={450}
-          height={450}
-          alt="images"
-          className={classNames.image}
-        />
+        <div className={classNames.image}>
+          <Image src={employes} alt="images" fill className={classNames.img} />
+        </div>
         <div className={classNames.info}>
           <p className={classNames.title}>Tentang Perusahaan</p>
           <div className={classNames["tick-wrapper"]}>

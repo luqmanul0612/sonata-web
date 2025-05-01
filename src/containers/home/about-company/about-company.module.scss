@@ -7,30 +7,61 @@
   padding-top: 60px;
   .content {
     display: flex;
+    flex-direction: column;
+    align-items: center;
     @include screen.main-width;
     min-height: 100dvh;
     gap: 40px;
+    padding: 0 10px;
+    box-sizing: border-box;
+    @include screen.breakpoint-xl {
+      flex-direction: row;
+    }
     .image {
-      overflow: hidden;
-      border-radius: 12px;
-      min-width: 450px;
+      width: 100%;
+      aspect-ratio: 1/1;
+      max-width: 450px;
+      position: relative;
+      @include screen.breakpoint-xl {
+        min-width: 450px;
+        width: 450px;
+        height: 450px;
+      }
+      .img {
+        overflow: hidden;
+        border-radius: 12px;
+      }
     }
     .info {
       display: flex;
       flex-direction: column;
       gap: 20px;
+      align-items: center;
+      @include screen.breakpoint-xl {
+        align-items: flex-start;
+      }
       .title {
         color: colors.$blue-600;
-        font-size: 34px;
+        font-size: 25px;
         font-weight: 700;
-        max-width: 300px;
+        max-width: unset;
+        @include screen.breakpoint-xl {
+          font-size: 34px;
+          font-weight: 700;
+          max-width: 300px;
+        }
       }
       .tick-wrapper {
         display: flex;
         align-items: center;
+        flex-wrap: wrap;
         gap: 10px;
         width: 100%;
+        justify-content: center;
         gap: 20px;
+        @include screen.breakpoint-xl {
+          justify-content: flex-start;
+        }
         .tick {
           display: flex;
           align-items: center;
@@ -46,6 +77,7 @@
             :global(body.dark) & {
               color: colors.$slate-100;
             }
+            min-width: max-content;
             transition: color 0.2s ease-in-out;
           }
         }
@@ -56,6 +88,12 @@
         color: colors.$slate-900;
         :global(body.dark) & {
           color: colors.$slate-100;
+        }
+        max-width: 800px;
+        text-align: center;
+        @include screen.breakpoint-xl {
+          max-width: unset;
+          text-align: start;
         }
         transition: color 0.2s ease-in-out;
       }

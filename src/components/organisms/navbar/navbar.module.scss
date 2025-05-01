@@ -349,7 +349,7 @@
         padding-right: 30px;
       }
       &:hover {
-        background-color: colors.$slate-100;
+        background-color: colors.$slate-200;
         :global(body.dark) & {
           background-color: colors.$slate-950;
         }
