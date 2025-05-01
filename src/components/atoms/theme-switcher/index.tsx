@@ -7,8 +7,10 @@ import Moon from "@/assets/icons/moon.svg";
 import Sun from "@/assets/icons/sun.svg";
 import classNames from "./theme-switcher.module.scss";
 import { FC, useLayoutEffect } from "react";
+import { useTranslation } from "react-i18next";
 
 const ThemeSwitcher: FC = () => {
+  const { t } = useTranslation();
   const { colorScheme, setColorScheme } = useColorScheme((state) => state);
 
   useLayoutEffect(() => {
@@ -40,7 +42,7 @@ const ThemeSwitcher: FC = () => {
             exit={{ y: colorScheme === "light" ? -77 : "-50%" }}
             className={classNames.switcher}
           >
-            <p className={classNames.label}>Terang</p>
+            <p className={classNames.label}>{t("colorscheme_light")}</p>
             <Sun className={classNames.sun} />
           </motion.div>
         ) : (
@@ -51,7 +53,7 @@ const ThemeSwitcher: FC = () => {
             exit={{ y: colorScheme === "dark" ? -77 : "-50%" }}
             className={classNames.switcher}
           >
-            <p className={classNames.label}>Gelap</p>
+            <p className={classNames.label}>{t("colorscheme_dark")}</p>
             <Moon className={classNames.moon} />
           </motion.div>
         )}

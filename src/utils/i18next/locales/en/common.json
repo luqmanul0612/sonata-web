@@ -5,5 +5,7 @@
   "navbar_clients": "Clients",
   "navbar_news": "News",
   "navbar_certificates": "Certificates & Awards",
-  "navbar_about": "About Us"
+  "navbar_about": "About Us",
+  "colorscheme_light": "Light",
+  "colorscheme_dark": "Dark"
 }

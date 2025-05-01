@@ -1,6 +1,7 @@
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
 import resourcesToBackend from "i18next-resources-to-backend";
+import LanguageDetector from "i18next-browser-languagedetector";
 
 i18n
   .use(
@@ -9,9 +10,9 @@ i18n
         import(`./locales/${language}/${namespace}.json`)
     )
   )
+  .use(LanguageDetector)
   .use(initReactI18next)
   .init({
-    lng: "id",
     fallbackLng: "id",
     supportedLngs: ["en", "id"],
     keySeparator: ".",
@@ -22,6 +23,11 @@ i18n
     },
     react: {
       useSuspense: false,
+    },
+    detection: {
+      order: ["localStorage", "navigator"],
+      caches: ["localStorage"],
+      lookupLocalStorage: "i18nextLng",
     },
   });
 
