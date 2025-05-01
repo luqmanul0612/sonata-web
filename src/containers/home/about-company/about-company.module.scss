@@ -41,6 +41,9 @@
       }
       .title {
         color: colors.$blue-600;
+        :global(body.dark) & {
+          color: colors.$blue-400;
+        }
         font-size: 25px;
         font-weight: 700;
         max-width: unset;

@@ -10,7 +10,7 @@ import subService4 from "@/assets/images/subservice-4.jpg";
 import Button from "@/components/atoms/button";
 import "keen-slider/keen-slider.min.css";
 import { useKeenSlider } from "keen-slider/react";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import clsx from "clsx";
 
 const subserviceData = [
@@ -46,17 +46,25 @@ const subserviceData = [
 
 const Services = () => {
   const [loaded, setLoaded] = useState(false);
-  const [screenType, setScreenType] = useState("desktop");
-
   const [ref] = useKeenSlider<HTMLDivElement>(
     {
       loop: true,
+      breakpoints: {
+        "(min-width: 900px)": {
+          slides: { perView: 3, spacing: 20 },
+          vertical: false,
+        },
+        "(min-width: 1280px)": {
+          slides: { perView: 2, spacing: 20 },
+          vertical: true,
+        },
+      },
       slides: {
         origin: "auto",
-        perView: screenType === "desktop" ? 2 : screenType === "tablet" ? 3 : 2,
-        spacing: 20,
+        perView: 2,
+        spacing: 10,
       },
-      vertical: screenType === "desktop",
+      vertical: false,
       created() {
         setLoaded(true);
       },
@@ -92,21 +100,6 @@ const Services = () => {
       },
     ]
   );
-
-  useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth > 1280) {
-        setScreenType("desktop");
-      } else if (window.innerWidth > 900) {
-        setScreenType("tablet");
-      } else {
-        setScreenType("mobile");
-      }
-    };
-    handleResize();
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
 
   return (
     <section id="services" className={classNames.main}>
