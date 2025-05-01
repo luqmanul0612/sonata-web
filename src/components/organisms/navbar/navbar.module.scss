@@ -11,10 +11,10 @@
   top: 0;
   box-sizing: border-box;
   z-index: 100;
-  background-color: #f6f9ffdd;
+  background-color: #f6f9ffc6;
   box-sizing: border-box;
   :global(body.dark) & {
-    background-color: #0f172ad2;
+    background-color: #0f172acb;
   }
   transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
   &.active {
@@ -53,9 +53,6 @@
       }
     }
     .mobileMenu {
-      @include screen.breakpoint-xl {
-        display: none;
-      }
       width: 24px;
       min-height: 24px;
       border: none;
@@ -66,6 +63,9 @@
         color: colors.$slate-100;
       }
       cursor: pointer;
+      @include screen.breakpoint-xl {
+        display: none;
+      }
     }
     .NavigationMenuRoot {
       display: none;
@@ -309,12 +309,22 @@
   flex-direction: column;
   background-color: #f6f9ff;
   :global(body.dark) & {
-    background-color: colors.$slate-900;
+    background-color: #0d1526;
+  }
+  transition: 0.2s all ease-in-out;
+  .actions {
+    display: flex;
+    padding: 10px;
+    gap: 10px;
+    margin-top: 10px;
+    border-top: 1px solid colors.$slate-600;
+    :global(body.dark) & {
+      border-top: 1px solid colors.$slate-600;
+    }
   }
   .menu {
     display: flex;
     flex-direction: column;
-    margin-top: 50px;
     width: 100%;
     .mobileMenuItemCollapible {
       width: 100%;
@@ -322,98 +332,69 @@
     .mobileMenuItem {
       display: flex;
       align-items: center;
-      justify-content: flex-end;
-      font-size: 15px;
+      font-size: 12px;
       width: 100%;
       box-sizing: border-box;
-      font-weight: 500;
+      font-weight: 400;
       padding: 10px 20px;
-      height: 50px;
-      transition: 0.1s all ease-in-out;
+      height: 45px;
       cursor: pointer;
-      text-align: end;
       gap: 10px;
       color: colors.$slate-900;
+      :global(body.dark) & {
+        color: colors.$slate-100;
+      }
+      transition: 0.2s all ease-in-out;
       &.subItem {
         padding-right: 30px;
       }
       &:hover {
-        background-color: colors.$blue-100;
+        background-color: colors.$slate-100;
+        :global(body.dark) & {
+          background-color: colors.$slate-950;
+        }
       }
     }
   }
 }
 
-.IconButton {
-  font-family: inherit;
-  height: 50px;
-  width: 50px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  color: colors.$red-600;
-  position: absolute;
-  top: 10px;
-  border: none;
-  outline: none;
-  right: 10px;
-  background-color: transparent;
-  cursor: pointer;
-  transition: 0.1s all ease-in-out;
-  &:hover {
-    background-color: colors.$red-100;
+.PopoverContent {
+  border-radius: 4px;
+  width: 100dvw;
+  animation-duration: 400ms;
+  animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity;
+}
+.PopoverContent:focus {
+  box-shadow: hsl(206 22% 7% / 35%) 0px 10px 38px -10px,
+    hsl(206 22% 7% / 20%) 0px 10px 20px -15px, 0 0 0 2px var(--violet-7);
+}
+
+.PopoverContent[data-state="open"][data-side="bottom"] {
+  animation-name: slideDownAndFade;
+}
+.PopoverContent[data-state="closed"][data-side="bottom"] {
+  animation-name: slideUpAndFadeClosed;
+}
+
+@keyframes slideUpAndFadeClosed {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-5px);
   }
 }
 
-@keyframes overlayShow {
+@keyframes slideDownAndFade {
   from {
     opacity: 0;
+    transform: translateY(-5px);
   }
   to {
     opacity: 1;
-  }
-}
-
-@keyframes contentShow {
-  from {
-    opacity: 0;
-    transform: translate(-50%, -48%) scale(0.96);
-  }
-  to {
-    opacity: 1;
-    transform: translate(-50%, -50%) scale(1);
-  }
-}
-
-.mobileMenuContent {
-  overflow: hidden;
-  > div {
-    border-top: 1px solid colors.$slate-400;
-    border-bottom: 1px solid colors.$slate-400;
-  }
-}
-
-.mobileMenuContent[data-state="open"] {
-  animation: slideDown 300ms ease-out;
-}
-.mobileMenuContent[data-state="closed"] {
-  animation: slideUp 300ms ease-out;
-}
-
-@keyframes slideDown {
-  from {
-    height: 0;
-  }
-  to {
-    height: var(--radix-collapsible-content-height);
-  }
-}
-
-@keyframes slideUp {
-  from {
-    height: var(--radix-collapsible-content-height);
-  }
-  to {
-    height: 0;
+    transform: translateY(0);
   }
 }

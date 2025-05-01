@@ -4,7 +4,7 @@
 .main {
   display: flex;
   justify-content: center;
-  margin-top: 60px;
+  padding-top: 60px;
   .content {
     display: flex;
     @include screen.main-width;
@@ -27,6 +27,7 @@
       }
       .tick-wrapper {
         display: flex;
+        align-items: center;
         gap: 10px;
         width: 100%;
         gap: 20px;
@@ -60,6 +61,10 @@
       }
       .button {
         margin-top: 10px;
+        .arrow {
+          width: 24px;
+          height: 24px;
+        }
       }
     }
   }

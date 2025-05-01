@@ -3,6 +3,7 @@ import classNames from "./about-company.module.scss";
 import employes from "@/assets/images/employes.jpg";
 import TickCircle from "@/assets/icons/tick-circle.svg";
 import Button from "@/components/atoms/button";
+import ArrowRight from "@/assets/icons/arrow-right.svg";
 
 const AboutCompany = () => {
   return (
@@ -52,7 +53,12 @@ const AboutCompany = () => {
             controlling costs and monitoring deadlines to ensure complete client
             satisfaction.
           </p>
-          <Button className={classNames.button}>Selengkapnya</Button>
+          <Button
+            className={classNames.button}
+            endIcon={<ArrowRight className={classNames.arrow} />}
+          >
+            Selengkapnya
+          </Button>
         </div>
       </div>
     </section>

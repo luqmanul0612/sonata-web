@@ -15,6 +15,8 @@ const Button = React.forwardRef<
         primary: variant === "primary",
         secondary: variant === "secondary",
         "secondary-white": variant === "secondary-white",
+        "has-start-icon": !!startIcon,
+        "has-end-icon": !!endIcon,
       })}
     >
       {!!startIcon && <div className="Button-start-icon">{startIcon}</div>}

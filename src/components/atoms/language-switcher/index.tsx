@@ -5,7 +5,7 @@ import { FC } from "react";
 import FlagIdn from "@/assets/images/flag-idn.svg";
 import FlagEng from "@/assets/images/flag-eng.svg";
 import { useTranslation } from "react-i18next";
-import ArrowDown from "@/assets/icons/arrow-down.svg";
+import ChevronDown from "@/assets/icons/chevron-down.svg";
 import * as Popover from "@radix-ui/react-popover";
 
 const LanguageSwitcher: FC = () => {
@@ -21,7 +21,7 @@ const LanguageSwitcher: FC = () => {
             ) : (
               <FlagEng className={classNames.flag} />
             )}
-            <ArrowDown className={classNames.arrow} />
+            <ChevronDown className={classNames.arrow} />
           </button>
         </Popover.Trigger>
         <Popover.Portal>

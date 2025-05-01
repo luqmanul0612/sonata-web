@@ -60,5 +60,14 @@
   .Button-end-icon {
     display: flex;
   }
+  &.has-start-icon {
+    padding: 0 20px 0 10px;
+  }
+  &.has-end-icon {
+    padding: 0 10px 0 20px;
+  }
+  &.has-start-icon.has-end-icon {
+    padding: 0 10px;
+  }
   transition: 0.2s ease all;
 }

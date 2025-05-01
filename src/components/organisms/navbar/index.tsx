@@ -4,7 +4,7 @@ import classNames from "./navbar.module.scss";
 import Logo from "@/assets/icons/logo.svg";
 import LogoDark from "@/assets/icons/logo-dark.svg";
 import * as NavigationMenu from "@radix-ui/react-navigation-menu";
-import React, { FC, useEffect, useState } from "react";
+import React, { FC, forwardRef, useEffect, useRef, useState } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import clsx from "clsx";
 import * as Collapsible from "@radix-ui/react-collapsible";
@@ -15,15 +15,16 @@ import { useScrollPosition } from "@/hooks/use-scroll-position";
 import { useTranslation } from "react-i18next";
 import LanguageSwitcher from "@/components/atoms/language-switcher";
 import Menu from "@/assets/icons/menu.svg";
-import ArrorDown from "@/assets/icons/arrow-down.svg";
-import { AnimatePresence, motion } from "framer-motion";
+import ChevronDown from "@/assets/icons/chevron-down.svg";
+import * as Popover from "@radix-ui/react-popover";
 
 const Navbar = () => {
   const router = useRouter();
   const { colorScheme } = useColorScheme((state) => state);
   const { scrollY } = useScrollPosition();
   const [activeHash, setActiveHash] = useState("home");
-  const [showMenu, setShowMenu] = useState(false);
+  const [open, setOpen] = useState(false);
+  const anchorRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     let ticking = false;
@@ -58,7 +59,8 @@ const Navbar = () => {
 
   return (
     <div
-      className={clsx(classNames.navbar, { [classNames.active]: scrollY > 90 })}
+      ref={anchorRef}
+      className={clsx(classNames.navbar, { [classNames.active]: scrollY > 77 })}
     >
       <div className={classNames["nav-content"]}>
         <div className={classNames.logo} onClick={() => router.push("/")}>
@@ -86,12 +88,13 @@ const Navbar = () => {
         </div>
         <button
           className={classNames.mobileMenu}
-          onClick={() => setShowMenu(true)}
+          onClick={() => setOpen(true)}
+          style={{ pointerEvents: open ? "none" : "all" }}
         >
           <Menu />
         </button>
       </div>
-      <AnimatePresence>{showMenu && <MobileMenuContainer />}</AnimatePresence>
+      <MobileMenuContainer open={open} setOpen={setOpen} ref={anchorRef} />
     </div>
   );
 };
@@ -112,7 +115,11 @@ const NavigationMenuItem: FC<NavigationMenuItemProps> = (props) => {
         router.push(props.path);
       } else if (props.hash) {
         const el = document.getElementById(props.hash);
-        el?.scrollIntoView({ behavior: "smooth" });
+        if (el)
+          window.scrollTo({
+            top: el.offsetTop - 77,
+            behavior: "smooth",
+          });
       }
     }
   };
@@ -128,7 +135,7 @@ const NavigationMenuItem: FC<NavigationMenuItemProps> = (props) => {
             [classNames.active]: isActive,
           })}
         >
-          {t(props.name)} <ArrorDown aria-hidden />
+          {t(props.name)} <ChevronDown aria-hidden />
         </NavigationMenu.Trigger>
         <NavigationMenu.Content className={classNames.NavigationMenuContent}>
           <ul className={classNames.ListWrapper}>
@@ -165,32 +172,70 @@ const ListItem: FC<NavbarData> = (props) => {
 
 ListItem.displayName = "ListItem";
 
-const MobileMenuContainer = () => {
+const MobileMenuContainer = forwardRef<
+  HTMLDivElement,
+  { open: boolean; setOpen: (open: boolean) => void }
+>((props, ref) => {
+  const { scrollY } = useScrollPosition();
   return (
-    <motion.div
-      initial={{ y: "50px", opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      exit={{ y: "-50px", opacity: 0 }}
-      className={classNames["mobile-menu-container"]}
-    >
-      <div className={classNames.menu}>
-        {navbarData.map((item) => (
-          <MobileMenuItem key={item.path + (item.hash ?? "")} {...item} />
-        ))}
-      </div>
-    </motion.div>
+    <Popover.Root open={props.open} onOpenChange={props.setOpen}>
+      <Popover.Anchor asChild>
+        <div ref={ref} />
+      </Popover.Anchor>
+      <Popover.Portal>
+        <Popover.Content
+          side="bottom"
+          align="start"
+          className={classNames.PopoverContent}
+        >
+          <div
+            className={clsx(classNames["mobile-menu-container"], {
+              [classNames.active]: scrollY > 77,
+            })}
+          >
+            <div className={classNames.menu}>
+              {navbarData.map((item) => (
+                <MobileMenuItem
+                  setOpen={props.setOpen}
+                  key={item.path + (item.hash ?? "")}
+                  {...item}
+                />
+              ))}
+            </div>
+            <div className={classNames.actions}>
+              <ThemeSwitcher />
+              <LanguageSwitcher />
+            </div>
+          </div>
+        </Popover.Content>
+      </Popover.Portal>
+    </Popover.Root>
   );
-};
+});
+
+MobileMenuContainer.displayName = "MobileMenuContainer";
 
 type MobileMenuItemProps = NavbarData & {
   className?: string;
+  setOpen: (open: boolean) => void;
 };
 const MobileMenuItem: FC<MobileMenuItemProps> = (props) => {
   const router = useRouter();
+  const pathname = usePathname();
   const { t } = useTranslation();
   const onClickItem = () => {
     if (!props.items?.length) {
-      router.push(props.path);
+      if (pathname !== props.path) {
+        router.push(props.path);
+      } else if (props.hash) {
+        const el = document.getElementById(props.hash);
+        if (el)
+          window.scrollTo({
+            top: el.offsetTop - 77,
+            behavior: "smooth",
+          });
+      }
+      props.setOpen(false);
     }
   };
   if (props.items?.length)
@@ -201,17 +246,18 @@ const MobileMenuItem: FC<MobileMenuItemProps> = (props) => {
             className={clsx(classNames.mobileMenuItem, props.className)}
             onClick={onClickItem}
           >
-            {!!props.items?.length && <ArrorDown aria-hidden />}
+            {!!props.items?.length && <ChevronDown aria-hidden />}
             <div>{t(props.name)}</div>
           </div>
         </Collapsible.Trigger>
-        <Collapsible.Content className={classNames.mobileMenuContent}>
+        <Collapsible.Content>
           <div>
             {props.items?.map((subItem) => (
               <MobileMenuItem
                 key={subItem.path}
                 {...subItem}
                 className={classNames.subItem}
+                setOpen={props.setOpen}
               />
             ))}
           </div>
@@ -223,7 +269,7 @@ const MobileMenuItem: FC<MobileMenuItemProps> = (props) => {
       className={clsx(classNames.mobileMenuItem, props.className)}
       onClick={onClickItem}
     >
-      {!!props.items?.length && <ArrorDown aria-hidden />}
+      {!!props.items?.length && <ChevronDown aria-hidden />}
       <div>{t(props.name)}</div>
     </div>
   );

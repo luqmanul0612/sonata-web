@@ -1,3 +1,5 @@
+"use client";
+
 import { useEffect, useState } from "react";
 
 export function useScrollPosition() {
@@ -7,7 +9,8 @@ export function useScrollPosition() {
   );
 
   useEffect(() => {
-    let lastScrollY = window.scrollY;
+    let lastScrollY = window.scrollY || 0;
+    setScrollY(lastScrollY);
 
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
