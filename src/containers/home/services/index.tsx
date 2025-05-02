@@ -50,9 +50,9 @@ const Services = () => {
     {
       loop: true,
       breakpoints: {
-        "(min-width: 900px)": {
+        "(min-width: 1024px)": {
           slides: { perView: 3, spacing: 20 },
-          vertical: false,
+          vertical: true,
         },
         "(min-width: 1280px)": {
           slides: { perView: 2, spacing: 20 },

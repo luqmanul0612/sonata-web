@@ -13,18 +13,18 @@
     gap: 20px;
     padding: 0 10px;
     box-sizing: border-box;
-    @include screen.breakpoint-md {
+    @include screen.breakpoint-lg {
       gap: 30px;
     }
     @include screen.breakpoint-lg {
-      flex-direction: row;
+      flex-direction: row-reverse;
     }
-    .main-services {
+    .project-porto {
       display: flex;
       flex-direction: column;
       align-items: center;
       padding: 30px;
-      height: 100%;
+      width: 100%;
       border: 1px solid colors.$slate-200;
       background-color: colors.$slate-100;
       :global(body.dark) & {
@@ -39,9 +39,10 @@
       }
       @include screen.breakpoint-lg {
         padding: 60px;
+        width: 60%;
       }
       .title {
-        font-size: 25px;
+        font-size: 30px;
         font-weight: 700;
         color: colors.$slate-900;
         :global(body.dark) & {
@@ -49,7 +50,7 @@
         }
         transition: color 0.2s ease-in-out;
         @include screen.breakpoint-md {
-          font-size: 30px;
+          font-size: 25px;
         }
       }
       .description {
@@ -69,14 +70,45 @@
           border-radius: 12px;
         }
       }
+      .other-porto {
+        display: flex;
+        gap: 10px;
+        width: 100%;
+        @include screen.breakpoint-md {
+          gap: 20px;
+        }
+        > div {
+          position: relative;
+          width: 100%;
+          aspect-ratio: 1/1;
+          .img {
+            border-radius: 12px;
+          }
+        }
+      }
       .button {
         margin-top: 20px;
       }
     }
-    .sub-services {
-      position: relative;
+    .projects {
+      display: flex;
+      flex-direction: row;
+      gap: 10px;
       width: 100%;
-      :global(.keen-slider__slide) {
+      height: 100%;
+      transition: 0.2s opacity ease-in-out;
+      @include screen.breakpoint-md {
+        gap: 20px;
+      }
+      @include screen.breakpoint-lg {
+        flex-direction: column;
+        width: 40%;
+      }
+      .project {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        height: 100%;
         padding: 10px;
         border: 1px solid colors.$slate-200;
         border-radius: 12px;
@@ -89,22 +121,6 @@
         @include screen.breakpoint-sm {
           padding: 20px;
         }
-      }
-      opacity: 0;
-      transition: 0.2s opacity ease-in-out;
-      @include screen.breakpoint-lg {
-        min-width: 300px;
-        width: 300px;
-        height: 755px;
-      }
-      &.loaded {
-        opacity: 1;
-      }
-      .sub-service {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-        height: fit-content;
         .image {
           position: relative;
           width: 100%;
@@ -116,12 +132,40 @@
         .title {
           font-size: 15px;
           font-weight: 700;
-          color: colors.$blue-600;
+          color: colors.$slate-900;
+          :global(body.dark) & {
+            color: colors.$slate-100;
+          }
           @include screen.breakpoint-md {
             font-size: 18px;
           }
           @include screen.breakpoint-xl {
             font-size: 22px;
+          }
+        }
+        .location {
+          display: flex;
+          align-items: center;
+          gap: 5px;
+          border: none;
+          outline: none;
+          background-color: transparent;
+          font-size: 11px;
+          color: colors.$blue-600;
+          width: fit-content;
+          border-radius: 10px;
+          padding-right: 5px;
+          transition: all 0.2s ease-in-out;
+          cursor: pointer;
+          &:hover {
+            background-color: colors.$slate-200;
+          }
+          @include screen.breakpoint-md {
+            font-size: 12px;
+          }
+          .icon {
+            width: 24px;
+            height: 24px;
           }
         }
         .description {
@@ -130,7 +174,6 @@
           :global(body.dark) & {
             color: colors.$slate-100;
           }
-          transition: color 0.2s ease-in-out;
           display: -webkit-box;
           -webkit-line-clamp: 2;
           line-clamp: 2;

@@ -13,7 +13,7 @@
     gap: 40px;
     padding: 0 10px;
     box-sizing: border-box;
-    @include screen.breakpoint-xl {
+    @include screen.breakpoint-lg {
       flex-direction: row;
     }
     .image {
@@ -21,7 +21,7 @@
       aspect-ratio: 1/1;
       max-width: 450px;
       position: relative;
-      @include screen.breakpoint-xl {
+      @include screen.breakpoint-lg {
         min-width: 450px;
         width: 450px;
         height: 450px;
@@ -36,7 +36,7 @@
       flex-direction: column;
       gap: 20px;
       align-items: center;
-      @include screen.breakpoint-xl {
+      @include screen.breakpoint-lg {
         align-items: flex-start;
       }
       .title {
@@ -47,9 +47,11 @@
         font-size: 25px;
         font-weight: 700;
         max-width: unset;
-        @include screen.breakpoint-xl {
+        @include screen.breakpoint-md {
           font-size: 34px;
           font-weight: 700;
+        }
+        @include screen.breakpoint-xl {
           max-width: 300px;
         }
       }
@@ -61,7 +63,7 @@
         width: 100%;
         justify-content: center;
         gap: 20px;
-        @include screen.breakpoint-xl {
+        @include screen.breakpoint-lg {
           justify-content: flex-start;
         }
         .tick {
@@ -93,7 +95,7 @@
         }
         max-width: 800px;
         text-align: center;
-        @include screen.breakpoint-xl {
+        @include screen.breakpoint-lg {
           font-size: 13px;
           font-weight: 400;
           max-width: unset;

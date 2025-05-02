@@ -1,6 +1,7 @@
 import AboutCompany from "./about-company";
 import MainSlider from "./main-slider";
 import News from "./news";
+import Projects from "./projects";
 import Services from "./services";
 
 const HomeContainer = () => {
@@ -9,6 +10,7 @@ const HomeContainer = () => {
       <MainSlider />
       <AboutCompany />
       <Services />
+      <Projects />
       <News />
     </div>
   );
