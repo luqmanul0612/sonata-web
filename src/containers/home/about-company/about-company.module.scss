@@ -51,9 +51,6 @@
           font-size: 34px;
           font-weight: 700;
         }
-        @include screen.breakpoint-xl {
-          max-width: 300px;
-        }
       }
       .tick-wrapper {
         display: flex;

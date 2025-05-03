@@ -1,11 +1,23 @@
 {
-  "navbar_home": "Home",
-  "navbar_services": "Services",
-  "navbar_projects": "Projects",
-  "navbar_clients": "Clients",
-  "navbar_news": "News",
-  "navbar_certificates": "Certificates & Awards",
-  "navbar_about": "About Us",
-  "colorscheme_light": "Light",
-  "colorscheme_dark": "Dark"
+  "navbar": {
+    "home": "Home",
+    "services": "Services",
+    "projects": "Projects",
+    "clients": "Clients",
+    "news": "News",
+    "certificates": "Certificates & Awards",
+    "about": "About Us"
+  },
+  "Light": "Light",
+  "Dark": "Dark",
+  "Our Services": "Our Services",
+  "Contact Us": "Contact Us",
+  "Building the Future with Natural Resources": "Building the Future with Natural Resources",
+  "#Integrated solutions from exploration to distribution": "#Integrated solutions from exploration to distribution",
+  "About the Company": "About the Company",
+  "Experience & Expertise": "Experience & Expertise",
+  "Modern Technology": "Modern Technology",
+  "Analysis & Execution": "Analysis & Execution",
+  "about_company_text": "PT. Sonata Indonesia establish resources consultancy or service for oil and gas sectors, especially working directly for operating companies based on client demands. We provide professional and dedicated services to Oil and Gas industry in the Indonesia.<0/><0/>Our Mission<0/>As a resourceful company, PT. Sonata Indonesia desires to become one of the leading quality resource suppliers providing effective solutions to its valuable customers.<0/><0/>Our Team<0/>Project management teams to service clients, and focuses on the highest standard of quality performance irrespective of project size and scope. Working in close co-operation with our clients, we develop integrated solutions unique to each project, while controlling costs and monitoring deadlines to ensure complete client satisfaction.",
+  "Read more": "Read more"
 }

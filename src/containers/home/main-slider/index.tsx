@@ -10,8 +10,10 @@ import Slider2 from "@/assets/images/slider-example1.jpg";
 import Slider3 from "@/assets/images/slider-example2.jpg";
 import { useState } from "react";
 import Button from "@/components/atoms/button";
+import { useTranslation } from "react-i18next";
 
 const MainSlider = () => {
+  const { t } = useTranslation();
   const [currentSlide, setCurrentSlide] = useState(0);
   const [loaded, setLoaded] = useState(false);
   const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>({
@@ -35,14 +37,14 @@ const MainSlider = () => {
             <Image fill src={Slider1} alt="slider" objectFit="cover" />
             <div className={classNames.content}>
               <p className={classNames.title}>
-                Membangun Masa Depan dengan Sumber Daya Alam
+                {t("Building the Future with Natural Resources")}
               </p>
               <p className={classNames.description}>
-                #Solusi terintegrasi dari eksplorasi hingga distribusi
+                {t("#Integrated solutions from exploration to distribution")}
               </p>
               <div className={classNames["button-group"]}>
-                <Button>Layanan Kami</Button>
-                <Button variant="secondary-white">Kontak Kami</Button>
+                <Button>{t("Our Services")}</Button>
+                <Button variant="secondary-white">{t("Contact Us")}</Button>
               </div>
             </div>
           </div>

@@ -1,11 +1,23 @@
 {
-  "navbar_home": "Home",
-  "navbar_services": "Layanan",
-  "navbar_projects": "Proyek",
-  "navbar_clients": "Klien",
-  "navbar_news": "Berita",
-  "navbar_certificates": "Sertifikat & Penghargaan",
-  "navbar_about": "Tentang Kami",
-  "colorscheme_light": "Terang",
-  "colorscheme_dark": "Gelap"
+  "navbar": {
+    "home": "Home",
+    "services": "Layanan",
+    "projects": "Proyek",
+    "clients": "Klien",
+    "news": "Berita",
+    "certificates": "Sertifikat & Penghargaan",
+    "about": "Tentang Kami"
+  },
+  "Light": "Terang",
+  "Dark": "Gelap",
+  "Our Services": "Layanan Kami",
+  "Contact Us": "Kontak Kami",
+  "Building the Future with Natural Resources": "Membangun Masa Depan dengan Sumber Daya Alam",
+  "#Integrated solutions from exploration to distribution": "#Solusi terintegrasi dari eksplorasi hingga distribusi",
+  "About the Company": "Tentang Perusahaan",
+  "Experience & Expertise": "Pengalaman & Keahlian",
+  "Modern Technology": "Teknologi Moderen",
+  "Analysis & Execution": "Analisa & Eksekusi",
+  "about_company_text": "PT. Sonata Indonesia mendirikan konsultan sumber daya atau layanan untuk sektor minyak dan gas, terutama bekerja secara langsung untuk perusahaan yang beroperasi berdasarkan permintaan klien. Kami menyediakan layanan profesional dan berdedikasi untuk industri Minyak dan Gas di Indonesia.<0/><0/>Misi Kami<0/>Sebagai perusahaan sumber daya, PT. Sonata Indonesia berkeinginan untuk menjadi salah satu pemasok sumber daya berkualitas terkemuka yang memberikan solusi efektif kepada pelanggan yang berharga.<0/><0/>Tim Kami<0/>Tim manajemen proyek untuk melayani klien, dan berfokus pada standar kualitas kinerja tertinggi terlepas dari ukuran dan ruang lingkup proyek. Bekerja sama dengan klien kami, kami mengembangkan solusi terintegrasi yang unik untuk setiap proyek, sambil mengendalikan biaya dan memantau tenggat waktu untuk memastikan kepuasan klien.",
+  "Read more": "Selengkapnya"
 }

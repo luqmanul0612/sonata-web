@@ -42,7 +42,7 @@ const ThemeSwitcher: FC = () => {
             exit={{ y: colorScheme === "light" ? -77 : "-50%" }}
             className={classNames.switcher}
           >
-            <p className={classNames.label}>{t("colorscheme_light")}</p>
+            <p className={classNames.label}>{t("Light")}</p>
             <Sun className={classNames.sun} />
           </motion.div>
         ) : (
@@ -53,7 +53,7 @@ const ThemeSwitcher: FC = () => {
             exit={{ y: colorScheme === "dark" ? -77 : "-50%" }}
             className={classNames.switcher}
           >
-            <p className={classNames.label}>{t("colorscheme_dark")}</p>
+            <p className={classNames.label}>{t("Dark")}</p>
             <Moon className={classNames.moon} />
           </motion.div>
         )}
