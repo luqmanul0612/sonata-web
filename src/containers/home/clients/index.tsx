@@ -20,7 +20,7 @@ const Clients = () => {
   const [ref, instanceRef] = useKeenSlider<HTMLDivElement>(
     {
       breakpoints: {
-        "(min-width: 720px)": {
+        "(min-width: 640px)": {
           slides: {
             origin: "auto",
             perView: 2,
@@ -173,6 +173,21 @@ const Clients = () => {
                   }}
                   className={clsx(classNames.dot, {
                     [classNames.active]: currentSlide === idx * perView,
+                    [classNames.sm]:
+                      instanceRef.current!.track.details.slides.length /
+                        perView >
+                      40,
+                    [classNames.md]:
+                      instanceRef.current!.track.details.slides.length /
+                        perView <=
+                        20 &&
+                      instanceRef.current!.track.details.slides.length /
+                        perView >
+                        4,
+                    [classNames.lg]:
+                      instanceRef.current!.track.details.slides.length /
+                        perView <=
+                      4,
                   })}
                 ></button>
               );
