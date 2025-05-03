@@ -30,7 +30,7 @@ export const footerData = {
   options: [
     {
       key: 1,
-      label: "Services",
+      label: "Services Act",
       value: [
         {
           key: 1,
@@ -76,7 +76,7 @@ export const footerData = {
         },
         {
           key: 2,
-          label: "Sign Up",
+          label: "Sign Up Free",
         },
         {
           key: 3,
