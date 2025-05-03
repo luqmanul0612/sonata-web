@@ -14,6 +14,7 @@
     width: 100dvw;
     height: 100dvh;
     position: relative;
+    transition: width 0.2s ease-in-out, height 0.2s ease-in-out;
     .content {
       @include screen.main-width;
       display: flex;
@@ -23,8 +24,8 @@
       min-height: 100%;
       padding: 0 10px;
       box-sizing: border-box;
-      @include screen.breakpoint-xl {
-        padding: 0;
+      @include screen.breakpoint-sm {
+        padding: 0 20px;
       }
       .title {
         color: colors.$slate-100;
