@@ -29,5 +29,26 @@
   "location_name": "Location of {{name}}",
   "Head Office": "Head Office",
   "Telephone": "Telephone",
-  "Opening Hours": "Opening Hours"
+  "Opening Hours": "Opening Hours",
+
+  "Services Act": "Services",
+  "Construction Supervisor": "Construction Supervisor",
+  "Engineering Services": "Engineering Services",
+  "Expedition Services": "Expedition Services",
+  "Operations & Maintenance": "Operations & Maintenance",
+  "Procurement Assistance": "Procurement Assistance",
+  "Project Management": "Project Management",
+  "Others": "Others",
+
+  "Company": "Company",
+  "Sign Up Free": "Sign Up",
+  "Post Ads": "Post Ads",
+  "Customer Service": "Customer Service",
+  "Recruitment Suggestions": "Recruitment Suggestions",
+  "International Partners": "International Partners",
+
+  "About Us": "About Us",
+  "Newsroom": "Newsroom",
+  "Investors": "Investors",
+  "Careers": "Careers"
 }

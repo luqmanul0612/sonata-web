@@ -29,5 +29,26 @@
   "location_name": "Lokasi {{name}}",
   "Head Office": "Kantor",
   "Telephone": "Telepon",
-  "Opening Hours": "Jam Buka"
+  "Opening Hours": "Jam Buka",
+
+  "Services Act": "Pelayanan",
+  "Construction Supervisor": "Pengawas Kontruksi",
+  "Engineering Services": "Layanan Rekayasa",
+  "Expedition Services": "Layanan Ekspedisi",
+  "Operations & Maintenance": "Operasi & Pemeliharaan",
+  "Procurement Assistance": "Bantuan Pengadaan",
+  "Project Management": "Manajemen Proyek",
+  "Others": "Lainnya",
+
+  "Company": "Perusahaan",
+  "Sign Up Free": "Daftar Gratis",
+  "Post Ads": "Pasang Iklan",
+  "Customer Service": "Layanan Pelanggan",
+  "Recruitment Suggestions": "Saran Perekrutan",
+  "International Partners": "Mitra Internasional",
+
+  "About Us": "Tentang Kami",
+  "Newsroom": "Ruang Berita",
+  "Investors": "Investor",
+  "Careers": "Karir"
 }
