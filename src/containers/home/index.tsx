@@ -5,6 +5,7 @@ import News from "./news";
 import Projects from "./projects";
 import Services from "./services";
 import classNames from "./home.module.scss";
+import Offers from "./offers";
 
 const HomeContainer = () => {
   return (
@@ -14,6 +15,7 @@ const HomeContainer = () => {
       <Services />
       <Projects />
       <Clients />
+      <Offers />
       <News />
     </div>
   );

@@ -14,6 +14,7 @@ const Button = React.forwardRef<
       className={clsx("Button-root", className, {
         primary: variant === "primary",
         secondary: variant === "secondary",
+        neutral: variant === "neutral",
         "secondary-white": variant === "secondary-white",
         "has-start-icon": !!startIcon,
         "has-end-icon": !!endIcon,
@@ -33,5 +34,5 @@ Button.displayName = "Button";
 type ButtonPropTypes = {
   startIcon?: React.ReactNode;
   endIcon?: React.ReactNode;
-  variant?: "primary" | "secondary" | "secondary-white";
+  variant?: "primary" | "secondary" | "secondary-white" | "neutral";
 };

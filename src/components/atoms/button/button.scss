@@ -24,9 +24,13 @@
     font-size: 14px;
     font-weight: 700;
   }
+
   &.primary {
     background-color: colors.$blue-600;
     color: #fff;
+    &:hover {
+      background-color: colors.$blue-700;
+    }
   }
 
   &.secondary {
@@ -45,12 +49,18 @@
     }
   }
 
-  &.primary {
-    background-color: colors.$blue-600;
-    color: #fff;
+  &.neutral {
+    background-color: colors.$slate-50;
+    color: colors.$blue-500;
+    body.dark & {
+      background-color: colors.$slate-800;
+      color: colors.$blue-50;
+    }
     &:hover {
-      background-color: colors.$blue-700;
-      color: #fff;
+      background-color: colors.$slate-300;
+      body.dark & {
+        background-color: colors.$slate-900;
+      }
     }
   }
 
