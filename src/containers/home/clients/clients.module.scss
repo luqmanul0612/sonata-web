@@ -89,6 +89,8 @@
         width: 100%;
         box-sizing: border-box;
         max-width: calc(100dvw - 140px);
+        opacity: 0;
+        transition: 0.2s opacity ease-in-out;
         @include screen.breakpoint-sm {
           max-width: calc(100dvw - 180px);
         }
@@ -104,8 +106,6 @@
           }
           transition: background-color 0.2s ease-in-out, border 0.2s ease-in-out;
         }
-        opacity: 0;
-        transition: 0.2s opacity ease-in-out;
         &.loaded {
           opacity: 1;
         }

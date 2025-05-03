@@ -89,7 +89,7 @@ const Services = () => {
               className={classNames.img}
               alt="images"
               fill
-              objectFit="cover"
+              style={{ objectFit: "cover" }}
             />
           </div>
           <Button className={classNames.button}>{t("See All")}</Button>
@@ -109,7 +109,7 @@ const Services = () => {
                       className={classNames.img}
                       alt="images"
                       fill
-                      objectFit="cover"
+                      style={{ objectFit: "cover" }}
                     />
                   </div>
                   <p className={classNames.title}>{item.title}</p>

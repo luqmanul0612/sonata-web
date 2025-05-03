@@ -101,7 +101,12 @@ const Clients = () => {
   return (
     <section id="clients" className={classNames.main}>
       <div className={classNames.bg}>
-        <Image src={testimonialBg} alt="images" objectFit="cover" fill />
+        <Image
+          src={testimonialBg}
+          alt="images"
+          fill
+          style={{ objectFit: "cover" }}
+        />
       </div>
       <div className={classNames.content}>
         <p className={classNames.title}>{t("Testimonials & Clients")}</p>
@@ -130,7 +135,7 @@ const Clients = () => {
                           className={classNames.img}
                           alt="images"
                           fill
-                          objectFit="cover"
+                          style={{ objectFit: "cover" }}
                         />
                       </div>
                       <div className={classNames.info}>

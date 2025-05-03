@@ -32,7 +32,7 @@ const Projects = () => {
               className={classNames.img}
               alt="images"
               fill
-              objectFit="cover"
+              style={{ objectFit: "cover" }}
             />
           </div>
           <div className={classNames["other-porto"]}>
@@ -42,7 +42,7 @@ const Projects = () => {
                 className={classNames.img}
                 alt="images"
                 fill
-                objectFit="cover"
+                style={{ objectFit: "cover" }}
               />
             </div>
             <div>
@@ -51,7 +51,7 @@ const Projects = () => {
                 className={classNames.img}
                 alt="images"
                 fill
-                objectFit="cover"
+                style={{ objectFit: "cover" }}
               />
             </div>
           </div>
@@ -66,7 +66,7 @@ const Projects = () => {
                   className={classNames.img}
                   alt="images"
                   fill
-                  objectFit="cover"
+                  style={{ objectFit: "cover" }}
                 />
               </div>
               <p className={classNames.title}>{item.title}</p>

@@ -34,7 +34,12 @@ const MainSlider = () => {
       <div ref={sliderRef} className="keen-slider">
         <div className={clsx("keen-slider__slide")}>
           <div className={classNames["slider-content"]}>
-            <Image fill src={Slider1} alt="slider" objectFit="cover" />
+            <Image
+              fill
+              src={Slider1}
+              alt="slider"
+              style={{ objectFit: "cover" }}
+            />
             <div className={classNames.content}>
               <p className={classNames.title}>
                 {t("Building the Future with Natural Resources")}
@@ -51,12 +56,22 @@ const MainSlider = () => {
         </div>
         <div className={clsx("keen-slider__slide")}>
           <div className={classNames["slider-content"]}>
-            <Image fill src={Slider2} alt="slider" objectFit="cover" />
+            <Image
+              fill
+              src={Slider2}
+              alt="slider"
+              style={{ objectFit: "cover" }}
+            />
           </div>
         </div>
         <div className={clsx("keen-slider__slide")}>
           <div className={classNames["slider-content"]}>
-            <Image fill src={Slider3} alt="slider" objectFit="cover" />
+            <Image
+              fill
+              src={Slider3}
+              alt="slider"
+              style={{ objectFit: "cover" }}
+            />
           </div>
         </div>
       </div>
