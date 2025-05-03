@@ -52,16 +52,23 @@
       .next {
         cursor: pointer;
         border: none;
-        background-color: colors.$slate-50;
         color: colors.$slate-500;
         width: 40px;
         height: 40px;
         min-width: 40px;
         aspect-ratio: 1/1;
         border-radius: 100%;
+        background-color: colors.$slate-50;
+        :global(body.dark) & {
+          background-color: colors.$slate-700;
+          color: colors.$slate-50;
+        }
         transition: background-color 0.2s ease-in-out;
         &:hover {
           background-color: colors.$slate-300;
+          :global(body.dark) & {
+            background-color: colors.$slate-800;
+          }
         }
         .icon {
           width: 24px;
@@ -142,6 +149,9 @@
                 font-weight: 500;
                 margin-top: 5px;
                 color: colors.$blue-500;
+                :global(body.dark) & {
+                  color: colors.$blue-400;
+                }
                 transition: color 0.2s ease-in-out;
                 @include screen.breakpoint-md {
                   font-size: 12px;
@@ -161,7 +171,7 @@
               font-weight: 400;
               color: colors.$slate-400;
               :global(body.dark) & {
-                color: colors.$slate-100;
+                color: colors.$slate-400;
               }
               text-align: justify;
               transition: color 0.2s ease-in-out;
@@ -194,8 +204,15 @@
         outline: none;
         border-radius: 2px;
         cursor: pointer;
+        background-color: colors.$slate-50;
+        :global(body.dark) & {
+          background-color: colors.$slate-300;
+        }
         &.active {
           background-color: colors.$blue-500;
+          :global(body.dark) & {
+            background-color: colors.$blue-400;
+          }
         }
       }
     }
