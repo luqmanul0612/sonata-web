@@ -1,0 +1,16 @@
+@use "src/utils/styles/colors.scss";
+@use "src/utils/styles/screen.scss";
+
+.main {
+  display: flex;
+  justify-content: center;
+  padding: 0 10px;
+  min-height: 500px;
+  .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    @include screen.main-width;
+  }
+}

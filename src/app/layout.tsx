@@ -3,6 +3,7 @@ import { Plus_Jakarta_Sans } from "next/font/google";
 import "@/utils/styles/globals.scss";
 import Navbar from "@/components/organisms/navbar";
 import I18nProvider from "./I18nProvider";
+import Footer from "@/components/organisms/footer";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   variable: "--font-plus-jakarta-sans",
@@ -29,6 +30,7 @@ export default function RootLayout({
         <I18nProvider>
           <Navbar />
           {children}
+          <Footer />
         </I18nProvider>
       </body>
     </html>
