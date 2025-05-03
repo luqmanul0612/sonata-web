@@ -28,6 +28,7 @@
       box-sizing: border-box;
       .icon {
         width: 30px;
+        min-width: 30px;
         height: 30px;
         color: colors.$slate-900;
         :global(body.dark) & {
