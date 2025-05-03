@@ -177,7 +177,10 @@ const Clients = () => {
                     instanceRef.current?.moveToIdx(idx * perView);
                   }}
                   className={clsx(classNames.dot, {
-                    [classNames.active]: currentSlide === idx * perView,
+                    [classNames.active]:
+                      currentSlide === idx * perView ||
+                      (currentSlide >= idx * perView &&
+                        currentSlide < idx * perView + perView),
                     [classNames.sm]:
                       instanceRef.current!.track.details.slides.length /
                         perView >
