@@ -10,8 +10,10 @@ import { clientsData } from "./data";
 import testimonialBg from "@/assets/images/testimonial-bg.jpg";
 import ArrowDropLeftLine from "@/assets/icons/arrow-drop-left-line.svg";
 import ArrowDropRightLine from "@/assets/icons/arrow-drop-right-line.svg";
+import { useTranslation } from "react-i18next";
 
 const Clients = () => {
+  const { t } = useTranslation();
   const [loaded, setLoaded] = useState(false);
   const [currentSlide, setCurrentSlide] = useState(0);
   const [perView, setPerView] = useState(0);
@@ -102,7 +104,7 @@ const Clients = () => {
         <Image src={testimonialBg} alt="images" objectFit="cover" fill />
       </div>
       <div className={classNames.content}>
-        <p className={classNames.title}>Testimoni & Klien</p>
+        <p className={classNames.title}>{t("Testimonials & Clients")}</p>
         <div className={classNames["testimonial-wrapper"]}>
           <button
             className={classNames.prev}

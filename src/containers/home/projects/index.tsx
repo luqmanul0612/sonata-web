@@ -8,13 +8,15 @@ import Map from "@/assets/icons/map.svg";
 import Button from "@/components/atoms/button";
 import "keen-slider/keen-slider.min.css";
 import { projectsData } from "./data";
+import { useTranslation } from "react-i18next";
 
 const Projects = () => {
+  const { t } = useTranslation();
   return (
     <section id="projects" className={classNames.main}>
       <div className={classNames.content}>
         <div className={classNames["project-porto"]}>
-          <p className={classNames.title}>Proyek & Portofolio</p>
+          <p className={classNames.title}>{t("Project & Portfolio")}</p>
           <p className={classNames.description}>
             Lorem ipsum dolor sit amet consectetur. Ornare orci amet ut nunc
             tempor consectetur libero. Lectus nisl morbi libero convallis vel
@@ -53,7 +55,7 @@ const Projects = () => {
               />
             </div>
           </div>
-          <Button className={classNames.button}>Lihat Semua</Button>
+          <Button className={classNames.button}>{t("See All")}</Button>
         </div>
         <div className={classNames["projects"]}>
           {projectsData.map((item) => (

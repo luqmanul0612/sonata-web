@@ -9,8 +9,10 @@ import { useKeenSlider } from "keen-slider/react";
 import { useState } from "react";
 import clsx from "clsx";
 import { subserviceData } from "./data";
+import { useTranslation } from "react-i18next";
 
 const Services = () => {
+  const { t } = useTranslation();
   const [loaded, setLoaded] = useState(false);
   const [ref] = useKeenSlider<HTMLDivElement>(
     {
@@ -71,7 +73,7 @@ const Services = () => {
     <section id="services" className={classNames.main}>
       <div className={classNames.content}>
         <div className={classNames["main-services"]}>
-          <p className={classNames.title}>Layanan Utama</p>
+          <p className={classNames.title}>{t("Main Services")}</p>
           <p className={classNames.description}>
             Lorem ipsum dolor sit amet consectetur. Ornare orci amet ut nunc
             tempor consectetur libero. Lectus nisl morbi libero convallis vel
@@ -90,7 +92,7 @@ const Services = () => {
               objectFit="cover"
             />
           </div>
-          <Button className={classNames.button}>Lihat Semua</Button>
+          <Button className={classNames.button}>{t("See All")}</Button>
         </div>
         <div
           className={clsx(classNames["sub-services"], {
