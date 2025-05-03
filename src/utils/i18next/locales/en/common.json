@@ -26,5 +26,8 @@
   "Testimonials & Clients": "Testimonials & Clients",
   "Get a Quote": "Get a Quote",
   "Latest News": "Latest News",
-  "location_name": "Location of {{name}}"
+  "location_name": "Location of {{name}}",
+  "Head Office": "Head Office",
+  "Telephone": "Telephone",
+  "Opening Hours": "Opening Hours"
 }

@@ -26,5 +26,8 @@
   "Testimonials & Clients": "Testimoni & Klien",
   "Get a Quote": "Dapatkan Penawaran",
   "Latest News": "Berita Terbaru",
-  "location_name": "Lokasi {{name}}"
+  "location_name": "Lokasi {{name}}",
+  "Head Office": "Kantor",
+  "Telephone": "Telepon",
+  "Opening Hours": "Jam Buka"
 }
