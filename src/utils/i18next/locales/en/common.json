@@ -25,5 +25,6 @@
   "Project & Portfolio": "Project & Portfolio",
   "Testimonials & Clients": "Testimonials & Clients",
   "Get a Quote": "Get a Quote",
-  "Latest News": "Latest News"
+  "Latest News": "Latest News",
+  "location_name": "Location of {{name}}"
 }

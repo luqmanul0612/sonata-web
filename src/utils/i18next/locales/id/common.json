@@ -25,5 +25,6 @@
   "Project & Portfolio": "Proyek & Portofolio",
   "Testimonials & Clients": "Testimoni & Klien",
   "Get a Quote": "Dapatkan Penawaran",
-  "Latest News": "Berita Terbaru"
+  "Latest News": "Berita Terbaru",
+  "location_name": "Lokasi {{name}}"
 }

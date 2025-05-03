@@ -1,0 +1,71 @@
+@use "src/utils/styles/colors.scss";
+@use "src/utils/styles/screen.scss";
+
+.main {
+  display: flex;
+  justify-content: center;
+  padding: 0 10px;
+  box-sizing: border-box;
+  .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    @include screen.main-width;
+    cursor: pointer;
+    &:hover {
+      .title {
+        .text {
+          text-decoration: underline;
+        }
+      }
+    }
+    .title {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      box-sizing: border-box;
+      .icon {
+        width: 30px;
+        height: 30px;
+        color: colors.$slate-900;
+        :global(body.dark) & {
+          color: colors.$slate-100;
+        }
+      }
+      .text {
+        font-size: 15px;
+        font-weight: 500;
+        color: colors.$slate-900;
+        :global(body.dark) & {
+          color: colors.$slate-100;
+        }
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        transition: color 0.2s ease-in-out;
+        @include screen.breakpoint-md {
+          font-size: 17px;
+        }
+        @include screen.breakpoint-xl {
+          -webkit-line-clamp: 1;
+          line-clamp: 1;
+        }
+        > span {
+          font-weight: 400;
+        }
+      }
+    }
+    .map {
+      width: 100%;
+      min-height: 250px;
+      position: relative;
+      .img {
+        border-radius: 12px;
+      }
+    }
+  }
+}

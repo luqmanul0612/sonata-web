@@ -6,6 +6,7 @@ import Projects from "./projects";
 import Services from "./services";
 import classNames from "./home.module.scss";
 import Offers from "./offers";
+import Location from "./location";
 
 const HomeContainer = () => {
   return (
@@ -17,6 +18,7 @@ const HomeContainer = () => {
       <Clients />
       <Offers />
       <News />
+      <Location />
     </div>
   );
 };
