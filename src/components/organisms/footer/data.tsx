@@ -26,7 +26,7 @@ export const footerData = {
       value: "Senin - Jumat: 08:00 - 17:00",
     },
   ],
-  copyright: "Copyright &copy; 2023 | PT Sonata Resources Indonesia",
+  copyright: <>Copyright &copy; 2023 | PT Sonata Resources Indonesia</>,
   options: [
     {
       key: 1,
