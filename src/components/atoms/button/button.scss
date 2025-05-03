@@ -28,8 +28,14 @@
   &.primary {
     background-color: colors.$blue-600;
     color: #fff;
+    body.dark & {
+      background-color: colors.$blue-700;
+    }
     &:hover {
       background-color: colors.$blue-700;
+      body.dark & {
+        background-color: colors.$blue-800;
+      }
     }
   }
 

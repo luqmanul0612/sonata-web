@@ -1,6 +1,13 @@
+@use "src/utils/styles/colors.scss";
+@use "src/utils/styles/screen.scss";
+
 .main {
-  min-height: 100dvh;
   display: flex;
-  align-items: center;
   justify-content: center;
+  .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @include screen.main-width;
+  }
 }

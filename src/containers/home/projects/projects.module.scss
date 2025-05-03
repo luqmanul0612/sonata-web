@@ -158,6 +158,9 @@
           cursor: pointer;
           &:hover {
             background-color: colors.$slate-200;
+            :global(body.dark) & {
+              background-color: colors.$slate-800;
+            }
           }
           @include screen.breakpoint-md {
             font-size: 12px;
