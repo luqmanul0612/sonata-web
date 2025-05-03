@@ -77,7 +77,14 @@ const Clients = () => {
           clearTimeout(timeout);
           if (mouseOver) return;
           timeout = setTimeout(() => {
-            slider.moveToIdx(currentSlide + 3);
+            slider.moveToIdx(
+              slider.track.details.rel +
+                (
+                  slider.options.slides as unknown as {
+                    perView: number;
+                  }
+                )?.perView || 1
+            );
           }, 5000);
         }
         slider.on("created", () => {
