@@ -8,7 +8,7 @@ import React, { FC, forwardRef, useEffect, useRef, useState } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import clsx from "clsx";
 import * as Collapsible from "@radix-ui/react-collapsible";
-import { NavbarData, navbarData } from "@/utils/constants/navbar";
+import { NavbarData, navbarData } from "@/components/organisms/navbar/data";
 import ThemeSwitcher from "@/components/atoms/theme-switcher";
 import useColorScheme from "@/utils/state/colorScheme";
 import { useScrollPosition } from "@/hooks/use-scroll-position";
