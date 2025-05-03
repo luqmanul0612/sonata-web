@@ -4,7 +4,6 @@
 .main {
   display: flex;
   justify-content: center;
-  padding-top: 60px;
   .content {
     display: flex;
     flex-direction: column;
@@ -76,6 +75,8 @@
     .sub-services {
       position: relative;
       width: 100%;
+      opacity: 0;
+      transition: 0.2s opacity ease-in-out;
       :global(.keen-slider__slide) {
         padding: 10px;
         border: 1px solid colors.$slate-200;
@@ -90,8 +91,6 @@
           padding: 20px;
         }
       }
-      opacity: 0;
-      transition: 0.2s opacity ease-in-out;
       @include screen.breakpoint-lg {
         min-width: 300px;
         width: 300px;
