@@ -34,34 +34,30 @@ export const footerData = {
       value: [
         {
           key: 1,
-          label: "Services",
-        },
-        {
-          key: 2,
           label: "Construction Supervisor",
         },
         {
-          key: 3,
+          key: 2,
           label: "Engineering Services",
         },
         {
-          key: 4,
+          key: 3,
           label: "Expedition Services",
         },
         {
-          key: 5,
+          key: 4,
           label: "Operations & Maintenance",
         },
         {
-          key: 6,
+          key: 5,
           label: "Procurement Assistance",
         },
         {
-          key: 7,
+          key: 6,
           label: "Project Management",
         },
         {
-          key: 8,
+          key: 7,
           label: "Others",
         },
       ],
@@ -72,15 +68,15 @@ export const footerData = {
       value: [
         {
           key: 1,
-          label: "Company",
-        },
-        {
-          key: 2,
           label: "Sign Up Free",
         },
         {
-          key: 3,
+          key: 2,
           label: "Post Ads",
+        },
+        {
+          key: 3,
+          label: "Customer Service",
         },
         {
           key: 4,
