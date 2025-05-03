@@ -7,37 +7,37 @@ export interface NavbarData {
 
 export const navbarData: NavbarData[] = [
   {
-    name: "home",
+    name: "navbar.home",
     path: "/",
     hash: "home",
   },
   {
-    name: "services",
+    name: "navbar.services",
     path: "/",
     hash: "services",
   },
   {
-    name: "projects",
+    name: "navbar.projects",
     path: "/",
     hash: "projects",
   },
   {
-    name: "clients",
+    name: "navbar.clients",
     path: "/",
     hash: "clients",
   },
   {
-    name: "news",
+    name: "navbar.news",
     path: "/",
     hash: "news",
   },
   {
-    name: "certificates",
+    name: "navbar.certificates",
     path: "/",
     hash: "certificates",
   },
   {
-    name: "about",
+    name: "navbar.about",
     path: "/",
     hash: "about",
   },
