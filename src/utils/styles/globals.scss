@@ -10,7 +10,7 @@
 html,
 body {
   margin: 0;
-  background-color: #f6f9ff;
+  background-color: colors.$slate-50;
   &.dark {
     background-color: colors.$slate-950;
   }
