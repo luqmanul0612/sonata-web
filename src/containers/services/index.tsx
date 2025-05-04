@@ -4,12 +4,11 @@ import Image from "next/image";
 import classNames from "./services.module.scss";
 import mainServiceImage from "@/assets/images/services/main-services-image.webp";
 import { servicesData } from "./data";
-import { Trans, useTranslation } from "react-i18next";
+import { Trans } from "react-i18next";
 import clsx from "clsx";
 import { useState } from "react";
 
 const ServicesContainer = () => {
-  const { t } = useTranslation();
   const [active, setActive] = useState(1);
 
   return (
@@ -55,7 +54,7 @@ const ServicesContainer = () => {
                   />
                 </div>
                 <div className={classNames.info}>
-                  <p className={classNames.label}>{t(item.label)}</p>
+                  <p className={classNames.label}>{item.label}</p>
                 </div>
               </button>
             ))}
@@ -68,7 +67,7 @@ const ServicesContainer = () => {
                 title: <p className={classNames["content-title"]} />,
                 subtitle: <p className={classNames["content-subtitle"]} />,
                 text: <p className={classNames["content-text"]} />,
-                item: <p className={classNames["content-item"]} />
+                item: <p className={classNames["content-item"]} />,
               }}
             />
           </div>
