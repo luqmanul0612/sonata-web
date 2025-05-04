@@ -1,44 +1,52 @@
 export interface NavbarData {
+  key: string;
   name: string;
   path: string;
-  hash?: string;
+  highlight?: string | null;
   items?: NavbarData[];
 }
 
 export const navbarData: NavbarData[] = [
   {
+    key: "home",
     name: "navbar.home",
     path: "/",
-    hash: "home",
+    highlight: null,
   },
   {
+    key: "services",
     name: "navbar.services",
-    path: "/",
-    hash: "services",
+    path: "/services",
+    highlight: "services",
   },
   {
+    key: "projects",
     name: "navbar.projects",
     path: "/",
-    hash: "projects",
+    highlight: "projects",
   },
   {
+    key: "clients",
     name: "navbar.clients",
     path: "/",
-    hash: "clients",
+    highlight: "clients",
   },
   {
+    key: "news",
     name: "navbar.news",
     path: "/",
-    hash: "news",
+    highlight: "news",
   },
   {
+    key: "certificates",
     name: "navbar.certificates",
-    path: "/",
-    hash: "certificates",
+    path: "/certificates",
+    highlight: null,
   },
   {
+    key: "about",
     name: "navbar.about",
     path: "/",
-    hash: "about",
+    highlight: "about",
   },
 ];

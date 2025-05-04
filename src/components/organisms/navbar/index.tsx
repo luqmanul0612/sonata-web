@@ -22,7 +22,7 @@ const Navbar = () => {
   const router = useRouter();
   const { colorScheme } = useColorScheme((state) => state);
   const { scrollY } = useScrollPosition();
-  const [activeHash, setActiveHash] = useState("home");
+  const [activeNav, setActiveNav] = useState("");
   const [open, setOpen] = useState(false);
   const anchorRef = useRef<HTMLDivElement>(null);
 
@@ -41,11 +41,11 @@ const Navbar = () => {
               rect.top <= window.innerHeight / 2 &&
               rect.bottom >= window.innerHeight / 2
             ) {
-              current = section.id;
+              current = section.id ?? "";
             }
           });
 
-          setActiveHash(current);
+          setActiveNav(current);
           ticking = false;
         });
 
@@ -56,6 +56,8 @@ const Navbar = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  console.log("first", activeNav);
 
   return (
     <div
@@ -70,9 +72,9 @@ const Navbar = () => {
           <NavigationMenu.List className={classNames.NavigationMenuList}>
             {navbarData.map((item) => (
               <NavigationMenuItem
-                key={item.path + (item.hash ?? "")}
-                activeHash={activeHash}
-                {...item}
+                key={item.key}
+                activeNav={activeNav}
+                data={item}
               />
             ))}
             <NavigationMenu.Indicator
@@ -101,8 +103,9 @@ const Navbar = () => {
 
 export default Navbar;
 
-type NavigationMenuItemProps = NavbarData & {
-  activeHash?: string;
+type NavigationMenuItemProps = {
+  activeNav: string;
+  data: NavbarData;
 };
 
 const NavigationMenuItem: FC<NavigationMenuItemProps> = (props) => {
@@ -110,11 +113,11 @@ const NavigationMenuItem: FC<NavigationMenuItemProps> = (props) => {
   const pathname = usePathname();
   const { t } = useTranslation("common");
   const onClickItem = () => {
-    if (!props.items?.length) {
-      if (pathname !== props.path) {
-        router.push(props.path);
-      } else if (props.hash) {
-        const el = document.getElementById(props.hash);
+    if (!props.data.items?.length) {
+      if (pathname !== props.data.path) {
+        router.push(props.data.path);
+      } else if (props.data.highlight) {
+        const el = document.getElementById(props.data.highlight);
         if (el)
           window.scrollTo({
             top: el.offsetTop - 77,
@@ -123,11 +126,12 @@ const NavigationMenuItem: FC<NavigationMenuItemProps> = (props) => {
       }
     }
   };
-  const isActive = props.hash
-    ? props.hash === props.activeHash && props.path === pathname
-    : props.path === pathname;
 
-  if (props.items?.length)
+  const isActive = props.activeNav
+    ? props.data.key === props.activeNav
+    : props.data.path === pathname && !props.data.highlight;
+
+  if (props.data.items?.length)
     return (
       <NavigationMenu.Item className={classNames.NavigationMenuItem}>
         <NavigationMenu.Trigger
@@ -135,14 +139,15 @@ const NavigationMenuItem: FC<NavigationMenuItemProps> = (props) => {
             [classNames.active]: isActive,
           })}
         >
-          {t(props.name)} <ChevronDown aria-hidden />
+          {t(props.data.name)} <ChevronDown aria-hidden />
         </NavigationMenu.Trigger>
         <NavigationMenu.Content className={classNames.NavigationMenuContent}>
           <ul className={classNames.ListWrapper}>
-            {props.items?.map((subItem) => (
+            {props.data.items?.map((subItem) => (
               <ListItem
-                key={subItem.path + (subItem.hash ?? "")}
-                {...subItem}
+                key={subItem.key}
+                name={subItem.name}
+                path={subItem.path}
               />
             ))}
           </ul>
@@ -156,7 +161,7 @@ const NavigationMenuItem: FC<NavigationMenuItemProps> = (props) => {
       })}
       asChild
     >
-      <a onClick={onClickItem}>{t(props.name)}</a>
+      <a onClick={onClickItem}>{t(props.data.name)}</a>
     </NavigationMenu.Link>
   );
 };
@@ -197,8 +202,8 @@ const MobileMenuContainer = forwardRef<
               {navbarData.map((item) => (
                 <MobileMenuItem
                   setOpen={props.setOpen}
-                  key={item.path + (item.hash ?? "")}
-                  {...item}
+                  key={item.key}
+                  data={item}
                 />
               ))}
             </div>
@@ -215,8 +220,9 @@ const MobileMenuContainer = forwardRef<
 
 MobileMenuContainer.displayName = "MobileMenuContainer";
 
-type MobileMenuItemProps = NavbarData & {
+type MobileMenuItemProps = {
   className?: string;
+  data: NavbarData;
   setOpen: (open: boolean) => void;
 };
 const MobileMenuItem: FC<MobileMenuItemProps> = (props) => {
@@ -224,11 +230,11 @@ const MobileMenuItem: FC<MobileMenuItemProps> = (props) => {
   const pathname = usePathname();
   const { t } = useTranslation();
   const onClickItem = () => {
-    if (!props.items?.length) {
-      if (pathname !== props.path) {
-        router.push(props.path);
-      } else if (props.hash) {
-        const el = document.getElementById(props.hash);
+    if (!props.data.items?.length) {
+      if (pathname !== props.data.path) {
+        router.push(props.data.path);
+      } else if (props.data.highlight) {
+        const el = document.getElementById(props.data.highlight);
         if (el)
           window.scrollTo({
             top: el.offsetTop - 77,
@@ -238,7 +244,7 @@ const MobileMenuItem: FC<MobileMenuItemProps> = (props) => {
       props.setOpen(false);
     }
   };
-  if (props.items?.length)
+  if (props.data.items?.length)
     return (
       <Collapsible.Root className={classNames.mobileMenuItemCollapible}>
         <Collapsible.Trigger asChild>
@@ -246,18 +252,18 @@ const MobileMenuItem: FC<MobileMenuItemProps> = (props) => {
             className={clsx(classNames.mobileMenuItem, props.className)}
             onClick={onClickItem}
           >
-            {!!props.items?.length && <ChevronDown aria-hidden />}
-            <div>{t(props.name)}</div>
+            {!!props.data.items?.length && <ChevronDown aria-hidden />}
+            <div>{t(props.data.name)}</div>
           </div>
         </Collapsible.Trigger>
         <Collapsible.Content>
           <div>
-            {props.items?.map((subItem) => (
+            {props.data.items?.map((subItem) => (
               <MobileMenuItem
-                key={subItem.path}
-                {...subItem}
+                key={subItem.key}
                 className={classNames.subItem}
                 setOpen={props.setOpen}
+                data={subItem}
               />
             ))}
           </div>
@@ -269,8 +275,8 @@ const MobileMenuItem: FC<MobileMenuItemProps> = (props) => {
       className={clsx(classNames.mobileMenuItem, props.className)}
       onClick={onClickItem}
     >
-      {!!props.items?.length && <ChevronDown aria-hidden />}
-      <div>{t(props.name)}</div>
+      {!!props.data.items?.length && <ChevronDown aria-hidden />}
+      <div>{t(props.data.name)}</div>
     </div>
   );
 };
