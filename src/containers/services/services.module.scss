@@ -178,9 +178,9 @@
 .content-text {
   font-size: 13px;
   font-weight: 400;
-  color: colors.$slate-900;
+  color: colors.$slate-800;
   :global(body.dark) & {
-    color: colors.$slate-100;
+    color: colors.$slate-300;
   }
   @include screen.breakpoint-sm {
     font-size: 14px;
@@ -196,9 +196,9 @@
   }
   font-size: 13px;
   font-weight: 400;
-  color: colors.$slate-900;
+  color: colors.$slate-800;
   :global(body.dark) & {
-    color: colors.$slate-100;
+    color: colors.$slate-300;
   }
   @include screen.breakpoint-sm {
     font-size: 14px;
