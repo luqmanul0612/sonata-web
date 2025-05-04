@@ -63,7 +63,7 @@
         color: colors.$slate-100;
       }
       cursor: pointer;
-      @include screen.breakpoint-xl {
+      @include screen.breakpoint-lg {
         display: none;
       }
     }
