@@ -1,5 +1,58 @@
+@use "src/utils/styles/colors.scss";
+@use "src/utils/styles/screen.scss";
+
 .main {
   display: flex;
   flex-direction: column;
   gap: 60px;
+  align-items: center;
+  padding-top: 100px;
+  @include screen.breakpoint-sm {
+    padding-top: 140px;
+  }
+  .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @include screen.main-width;
+    padding: 0 10px;
+    .main-image {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      border: 1px solid colors.$slate-200;
+      background-color: colors.$slate-100;
+      :global(body.dark) & {
+        border: 1px solid colors.$slate-800;
+        background-color: colors.$slate-900;
+      }
+      padding: 20px;
+      border-radius: 12px;
+      transition: background-color 0.2s ease-in-out, border 0.2s ease-in-out;
+      @include screen.breakpoint-sm {
+        gap: 40px;
+        padding: 40px;
+      }
+      .image {
+        position: relative;
+        width: 100%;
+        aspect-ratio: 16/9;
+        .img {
+          border-radius: 8px;
+        }
+      }
+      .text {
+        font-size: 12px;
+        text-align: center;
+        color: colors.$slate-900;
+        :global(body.dark) & {
+          color: colors.$slate-100;
+        }
+        transition: color 0.2s ease-in-out;
+        @include screen.breakpoint-sm {
+          font-size: 14px;
+        }
+      }
+    }
+  }
 }

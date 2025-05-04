@@ -176,6 +176,7 @@
           :global(body.dark) & {
             color: colors.$slate-100;
           }
+          transition: color 0.2s ease-in-out;
           display: -webkit-box;
           -webkit-line-clamp: 2;
           line-clamp: 2;
