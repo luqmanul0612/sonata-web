@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 import classNames from "./location.module.scss";
 import LocationIcon from "@/assets/icons/location.svg";
 import Image from "next/image";
-import mapExample from "@/assets/images/map-example.jpg";
+import mapExample from "@/assets/images/map-example.webp";
 
 const Location = () => {
   const { t } = useTranslation();

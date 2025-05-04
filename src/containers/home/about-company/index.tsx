@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import classNames from "./about-company.module.scss";
-import employes from "@/assets/images/employes.jpg";
+import employes from "@/assets/images/employes.webp";
 import TickCircle from "@/assets/icons/tick-circle.svg";
 import Button from "@/components/atoms/button";
 import ArrowRight from "@/assets/icons/arrow-right.svg";

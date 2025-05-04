@@ -1,4 +1,4 @@
-import newsImage from "@/assets/images/news-image-example.jpg";
+import newsImage from "@/assets/images/news-image-example.webp";
 
 export const newsData = [
   {

@@ -1,4 +1,4 @@
-import clientExample from "@/assets/images/client-example.jpg";
+import clientExample from "@/assets/images/client-example.webp";
 
 const data = [
   {

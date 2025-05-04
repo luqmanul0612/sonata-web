@@ -2,8 +2,8 @@
 
 import Image from "next/image";
 import classNames from "./projects.module.scss";
-import projectPorto1 from "@/assets/images/project-porto-1.jpg";
-import projectPorto2 from "@/assets/images/project-porto-2.jpg";
+import projectPorto1 from "@/assets/images/project-porto-1.webp";
+import projectPorto2 from "@/assets/images/project-porto-2.webp";
 import Map from "@/assets/icons/map.svg";
 import Button from "@/components/atoms/button";
 import "keen-slider/keen-slider.min.css";

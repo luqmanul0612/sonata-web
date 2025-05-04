@@ -7,7 +7,7 @@ import { useKeenSlider } from "keen-slider/react";
 import { useState } from "react";
 import clsx from "clsx";
 import { clientsData } from "./data";
-import testimonialBg from "@/assets/images/testimonial-bg.jpg";
+import testimonialBg from "@/assets/images/testimonial-bg.webp";
 import ArrowDropLeftLine from "@/assets/icons/arrow-drop-left-line.svg";
 import ArrowDropRightLine from "@/assets/icons/arrow-drop-right-line.svg";
 import { useTranslation } from "react-i18next";

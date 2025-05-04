@@ -1,7 +1,7 @@
-import subService1 from "@/assets/images/subservice-1.jpg";
-import subService2 from "@/assets/images/subservice-2.jpg";
-import subService3 from "@/assets/images/subservice-3.jpg";
-import subService4 from "@/assets/images/subservice-4.jpg";
+import subService1 from "@/assets/images/subservice-1.webp";
+import subService2 from "@/assets/images/subservice-2.webp";
+import subService3 from "@/assets/images/subservice-3.webp";
+import subService4 from "@/assets/images/subservice-4.webp";
 
 export const subserviceData = [
   {

@@ -1,6 +1,6 @@
 import Image from "next/image";
 import classNames from "./services.module.scss";
-import mainServiceImage from "@/assets/images/services/main-services-image.jpg";
+import mainServiceImage from "@/assets/images/services/main-services-image.webp";
 
 const ServicesContainer = () => {
   return (
