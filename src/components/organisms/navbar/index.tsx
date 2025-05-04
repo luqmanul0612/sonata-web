@@ -57,8 +57,6 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  console.log("first", activeNav);
-
   return (
     <div
       ref={anchorRef}
