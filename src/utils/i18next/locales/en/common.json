@@ -34,7 +34,6 @@
   "Services Act": "Services",
   "Services": "Services",
   "Construction Supervisor": "Construction Supervisor",
-  "Engineering Services": "Engineering Services",
   "Expedition Services": "Expedition Services",
   "Operations & Maintenance": "Operations & Maintenance",
   "Procurement Assistance": "Procurement Assistance",
@@ -51,5 +50,20 @@
   "About Us": "About Us",
   "Newsroom": "Newsroom",
   "Investors": "Investors",
-  "Careers": "Careers"
+  "Careers": "Careers",
+
+  "Project Management Support Services": "Project Management Support Services",
+  "Engineering Services": "Engineering Services",
+  "Construction Supervision": "Construction Supervision",
+  "Inspection Service": "Inspection Service",
+  "Commission Assistance of Startup": "Commission Assistance of Startup",
+  "Plant Operation and Maintenance": "Plant Operation and Maintenance",
+  "service_content": {
+    "1": "<title>Project Management Support Services</title><br/><text>Is a professional service designed to assist organizations in planning, execution, monitoring, and completion of projects efficiently and effectively. This service supports project managers and teams by providing expertise, tools, and project management methodologies to ensure that projects proceed according to the defined budget, schedule, and scope of work.<br/>This service can be delivered by a dedicated internal team or third party (consultants) and is typically used across various sectors, including construction, information technology, manufacturing, public services, and the government sector.</text><br/><subtitle>Scope of Services (What's Included):</subtitle><br/><text>1. Project Planning & Scheduling</text><item>Development of Work Breakdown Structure (WBS)</item><item>Development of project schedules (timeline, Gantt chart, milestones)</item><item>Resource and budget planning</item><br/><text>2. Project Monitoring & Reporting</text><item>Project progress tracking</item><item>Periodic project status reporting</item><item>Identification and escalation of project issues/challenges</item><br/><text>3. Risk Management</text><item>Identification of project risks</item><item>Assessment of risk impact and probability</item><item>Risk mitigation and response strategies</item><br/><text>4. Documentation & Knowledge Management</text><item>Project document management (including version control)</item><item>Recording of lessons learned</item><item>Creation of technical and administrative documentation</item><br/><text>5. Stakeholder Communication Support</text><item>Coordination of project meetings</item><item>Creation of minutes and follow-up on decisions</item><item>Support for communication between teams and stakeholders</item><br/><text>6. Tools & System Support</text><item>Management of project management tools (such as Microsoft Project, Jira, Asana, Trello)</item><item>Integration of automated reporting systems</item><item>Training on project management tools</item><br/><text>7. Change Management Support</text><item>Assistance in scope change processes</item><item>Adjustment of work plans due to changes</item><item>Communication of changes to the team and stakeholders</item>",
+    "2": "Engineering Services",
+    "3": "Construction Supervision",
+    "4": "Inspection Service",
+    "5": "Commission Assistance of Startup",
+    "6": "Plant Operation and Maintenance"
+  }
 }

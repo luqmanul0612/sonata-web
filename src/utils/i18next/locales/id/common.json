@@ -34,7 +34,6 @@
   "Services Act": "Pelayanan",
   "Services": "Layanan",
   "Construction Supervisor": "Pengawas Kontruksi",
-  "Engineering Services": "Layanan Rekayasa",
   "Expedition Services": "Layanan Ekspedisi",
   "Operations & Maintenance": "Operasi & Pemeliharaan",
   "Procurement Assistance": "Bantuan Pengadaan",
@@ -51,5 +50,20 @@
   "About Us": "Tentang Kami",
   "Newsroom": "Ruang Berita",
   "Investors": "Investor",
-  "Careers": "Karir"
+  "Careers": "Karir",
+
+  "Project Management Support Services": "Layanan Dukungan Manajemen Proyek",
+  "Engineering Services": "Layanan Rekayasa",
+  "Construction Supervision": "Pengawasan Konstruksi",
+  "Inspection Service": "Layanan Inspeksi",
+  "Commission Assistance of Startup": "Bantuan Komisioning Saat Awal Pengoperasian",
+  "Plant Operation and Maintenance": "Operasi dan Pemeliharaan Pabrik",
+  "service_content": {
+    "1": "<title>Project Management Support Services</title><br/><br/><text>Adalah layanan profesional yang dirancang untuk membantu organisasi dalam perencanaan, pelaksanaan, pengawasan, dan penyelesaian proyek secara efisien dan efektif. Layanan ini mendukung manajer proyek dan tim dengan menyediakan keahlian, alat, serta metodologi manajemen proyek untuk memastikan bahwa proyek berjalan sesuai dengan anggaran, jadwal, dan lingkup kerja yang ditetapkan.<br/>Layanan ini dapat diberikan oleh tim internal khusus atau pihak ketiga (konsultan) dan biasanya digunakan dalam berbagai sektor, termasuk konstruksi, teknologi informasi, manufaktur, layanan publik, hingga sektor pemerintahan.</text><br/><subtitle>Cakupan Layanan (What's Included):</subtitle><br/><text>1. Project Planning & Scheduling</text><item>Penyusunan Work Breakdown Structure (WBS)</item><item>Pengembangan jadwal proyek (timeline, Gantt chart, milestone)</item><item>Perencanaan sumber daya dan anggaran</item><br/><text>2. Project Monitoring & Reporting</text><item>Pelacakan kemajuan proyek (progress tracking)</item><item>Pembuatan laporan status proyek secara berkala</item><item>Identifikasi dan eskalasi isu/kendala proyek</item><br/><text>3. Risk Management</text><item>Identifikasi risiko proyek</item><item>Penilaian dampak dan probabilitas risiko</item><item>Strategi mitigasi dan respons risiko</item><br/><text>4. Documentation & Knowledge Management</text><item>Manajemen dokumen proyek (termasuk version control)</item><item>Pencatatan lesson learned</item><item>Pembuatan dokumentasi teknis dan administratif</item><br/><text>5.Stakeholder Communication Support</text><item>Koordinasi rapat proyek</item><item>Pembuatan notulen dan tindak lanjut keputusan</item><item>Dukungan komunikasi antar tim dan pemangku kepentingan</item><br/><text>6. Tools & System Support</text><item>Pengelolaan tools manajemen proyek (seperti Microsoft Project, Jira, Asana, Trello)</item><item>Integrasi sistem pelaporan otomatis</item><item>Pelatihan penggunaan alat bantu manajemen proyek</item><br/><text>7. Change Management Support</text><item>Pendampingan dalam proses perubahan lingkup kerja</item><item>Penyesuaian rencana kerja akibat perubahan</item><item>Komunikasi perubahan kepada tim dan stakeholder</item>",
+    "2": "Engineering Services",
+    "3": "Construction Supervision",
+    "4": "Inspection Service",
+    "5": "Commission Assistance of Startup",
+    "6": "Plant Operation and Maintenance"
+  }
 }

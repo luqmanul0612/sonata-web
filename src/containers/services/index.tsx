@@ -4,7 +4,7 @@ import Image from "next/image";
 import classNames from "./services.module.scss";
 import mainServiceImage from "@/assets/images/services/main-services-image.webp";
 import { servicesData } from "./data";
-import { useTranslation } from "react-i18next";
+import { Trans, useTranslation } from "react-i18next";
 import clsx from "clsx";
 import { useState } from "react";
 
@@ -59,6 +59,18 @@ const ServicesContainer = () => {
                 </div>
               </button>
             ))}
+          </div>
+          <div className={classNames["service-detail"]}>
+            <Trans
+              i18nKey={`service_content.${active}`}
+              components={{
+                br: <br key="br" />,
+                title: <p className={classNames["content-title"]} />,
+                subtitle: <p className={classNames["content-subtitle"]} />,
+                text: <p className={classNames["content-text"]} />,
+                item: <p className={classNames["content-item"]} />
+              }}
+            />
           </div>
         </div>
       </div>

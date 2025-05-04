@@ -8,7 +8,7 @@
   align-items: center;
   padding-top: 100px;
   @include screen.breakpoint-sm {
-    padding-top: 140px;
+    padding-top: 120px;
   }
   .content {
     display: flex;
@@ -116,7 +116,7 @@
             aspect-ratio: 160/110;
           }
           .info {
-            padding: 0 10px 17px 10px;
+            padding: 0 10px 15px 10px;
             @include screen.breakpoint-sm {
               padding: 0 17px 20px 17px;
             }
@@ -138,5 +138,63 @@
         }
       }
     }
+  }
+}
+
+.content-title {
+  font-size: 27px;
+  font-weight: 700;
+  color: colors.$slate-900;
+  :global(body.dark) & {
+    color: colors.$slate-100;
+  }
+  transition: color 0.2s ease-in-out;
+  @include screen.breakpoint-sm {
+    font-size: 30px;
+  }
+  @include screen.breakpoint-sm {
+    font-size: 34px;
+  }
+}
+
+.content-subtitle {
+  font-size: 13px;
+  font-weight: 700;
+  color: colors.$slate-900;
+  :global(body.dark) & {
+    color: colors.$slate-100;
+  }
+  @include screen.breakpoint-sm {
+    font-size: 14px;
+  }
+}
+
+.content-text {
+  font-size: 13px;
+  font-weight: 400;
+  color: colors.$slate-900;
+  :global(body.dark) & {
+    color: colors.$slate-100;
+  }
+  @include screen.breakpoint-sm {
+    font-size: 14px;
+  }
+}
+
+.content-item {
+  margin-left: 5px;
+  &::before {
+    content: "•";
+    margin-right: 8px;
+    color: currentColor;
+  }
+  font-size: 13px;
+  font-weight: 400;
+  color: colors.$slate-900;
+  :global(body.dark) & {
+    color: colors.$slate-100;
+  }
+  @include screen.breakpoint-sm {
+    font-size: 14px;
   }
 }
