@@ -114,6 +114,12 @@
             position: relative;
             width: 100%;
             aspect-ratio: 160/110;
+            background-color: transparent;
+            transition: background-color 0.2s ease-in-out;
+            border-radius: 8px;
+            :global(body.dark) & {
+              background-color: colors.$slate-400;
+            }
           }
           .info {
             padding: 0 10px 15px 10px;
