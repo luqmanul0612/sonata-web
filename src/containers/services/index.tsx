@@ -1,8 +1,17 @@
+"use client";
+
 import Image from "next/image";
 import classNames from "./services.module.scss";
 import mainServiceImage from "@/assets/images/services/main-services-image.webp";
+import { servicesData } from "./data";
+import { useTranslation } from "react-i18next";
+import clsx from "clsx";
+import { useState } from "react";
 
 const ServicesContainer = () => {
+  const { t } = useTranslation();
+  const [active, setActive] = useState(1);
+
   return (
     <div className={classNames.main}>
       <div className={classNames.content}>
@@ -25,6 +34,32 @@ const ServicesContainer = () => {
             vitae maecenas varius. Suspendisse sagittis suspendisse cras in
             tempor non nunc ultricies tristique.
           </p>
+        </div>
+        <div className={classNames.services}>
+          <div className={classNames["service-list"]}>
+            {servicesData.map((item) => (
+              <button
+                className={clsx(classNames.service, {
+                  [classNames.active]: item.key === active,
+                })}
+                onClick={() => setActive(item.key)}
+                key={item.key}
+              >
+                <div className={classNames.image}>
+                  <Image
+                    src={item.image}
+                    alt="images"
+                    fill
+                    className={classNames.img}
+                    style={{ objectFit: "cover" }}
+                  />
+                </div>
+                <div className={classNames.info}>
+                  <p className={classNames.label}>{t(item.label)}</p>
+                </div>
+              </button>
+            ))}
+          </div>
         </div>
       </div>
     </div>

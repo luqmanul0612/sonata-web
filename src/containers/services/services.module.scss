@@ -16,6 +16,10 @@
     align-items: center;
     @include screen.main-width;
     padding: 0 10px;
+    gap: 20px;
+    @include screen.breakpoint-sm {
+      gap: 40px;
+    }
     .main-image {
       display: flex;
       flex-direction: column;
@@ -51,6 +55,86 @@
         transition: color 0.2s ease-in-out;
         @include screen.breakpoint-sm {
           font-size: 14px;
+        }
+      }
+    }
+    .services {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+      width: 100%;
+      .service-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+        gap: 10px;
+        width: 100%;
+        @include screen.breakpoint-sm {
+          gap: 20px;
+          grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+        }
+        .service {
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+          border: 1px solid colors.$slate-200;
+          background-color: colors.$slate-100;
+          outline: none;
+          text-align: start;
+          cursor: pointer;
+          :global(body.dark) & {
+            border: 1px solid colors.$slate-800;
+            background-color: colors.$slate-900;
+          }
+          padding-top: 5px;
+          border-radius: 12px;
+          transition: background-color 0.2s ease-in-out, border 0.2s ease-in-out;
+          &:hover {
+            border: 1px solid colors.$blue-400;
+            :global(body.dark) & {
+              border: 1px solid colors.$blue-300;
+            }
+          }
+          &.active {
+            border: 1px solid colors.$blue-600;
+            :global(body.dark) & {
+              border: 1px solid colors.$blue-500;
+            }
+            .info .label {
+              font-weight: 700;
+              color: colors.$blue-600;
+              :global(body.dark) & {
+                color: colors.$blue-500;
+              }
+            }
+          }
+          @include screen.breakpoint-sm {
+            padding-top: 10px;
+          }
+          .image {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 160/110;
+          }
+          .info {
+            padding: 0 10px 17px 10px;
+            @include screen.breakpoint-sm {
+              padding: 0 17px 20px 17px;
+            }
+            .label {
+              font-size: 11px;
+              color: colors.$slate-900;
+              :global(body.dark) & {
+                color: colors.$slate-100;
+              }
+              transition: color 0.2s ease-in-out, font-weight 0.2s ease-in-out;
+              @include screen.breakpoint-sm {
+                font-size: 12px;
+              }
+              @include screen.breakpoint-md {
+                font-size: 14px;
+              }
+            }
+          }
         }
       }
     }
