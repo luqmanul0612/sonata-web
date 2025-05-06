@@ -42,10 +42,10 @@ const MainSlider = () => {
           {sliders.map((item, idx) =>
             currentSlide === idx ? (
               <motion.div
-                initial={{ opacity: isMounted ? 0 : 1 }}
+                initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
-                transition={{ duration: isMounted ? 1 : 0 }}
+                transition={{ duration: isMounted ? 1 : 0.2 }}
                 key={idx}
                 className={classNames.image}
               >
