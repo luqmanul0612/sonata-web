@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import classNames from "./services.module.scss";
-import mainServiceImage from "@/assets/images/services/main-services-image.webp";
+import mainServiceImage from "@/assets/images/services/services-header.webp";
 import { servicesData } from "./data";
 import { Trans, useTranslation } from "react-i18next";
 import clsx from "clsx";

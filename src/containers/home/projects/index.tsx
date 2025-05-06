@@ -2,8 +2,9 @@
 
 import Image from "next/image";
 import classNames from "./projects.module.scss";
-import projectPorto1 from "@/assets/images/project-porto-1.webp";
-import projectPorto2 from "@/assets/images/project-porto-2.webp";
+import projectPorto1 from "@/assets/images/home/project-porto-1.webp";
+import projectPorto2 from "@/assets/images/home/project-porto-2.webp";
+import projectPorto3 from "@/assets/images/home/project-porto-3.webp";
 import Map from "@/assets/icons/map.svg";
 import Button from "@/components/atoms/button";
 import "keen-slider/keen-slider.min.css";
@@ -47,7 +48,7 @@ const Projects = () => {
             </div>
             <div>
               <Image
-                src={projectPorto2}
+                src={projectPorto3}
                 className={classNames.img}
                 alt="images"
                 fill

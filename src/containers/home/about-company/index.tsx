@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import classNames from "./about-company.module.scss";
-import employes from "@/assets/images/employes.webp";
+import aboutCompany from "@/assets/images/home/about-company.webp";
 import TickCircle from "@/assets/icons/tick-circle.svg";
 import Button from "@/components/atoms/button";
 import ArrowRight from "@/assets/icons/arrow-right.svg";
@@ -14,7 +14,7 @@ const AboutCompany = () => {
     <section id="about" className={classNames.main}>
       <div className={classNames.content}>
         <div className={classNames.image}>
-          <Image src={employes} alt="images" fill className={classNames.img} />
+          <Image src={aboutCompany} alt="images" fill className={classNames.img} />
         </div>
         <div className={classNames.info}>
           <p className={classNames.title}>{t("About the Company")}</p>

@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import classNames from "./services.module.scss";
-import mainService from "@/assets/images/main-service.webp";
+import mainService from "@/assets/images/home/services-main.webp";
 import Button from "@/components/atoms/button";
 import "keen-slider/keen-slider.min.css";
 import { useKeenSlider } from "keen-slider/react";
