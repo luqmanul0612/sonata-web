@@ -11,19 +11,19 @@
   top: 0;
   box-sizing: border-box;
   z-index: 100;
-  background-color: #f6f9ffdc;
+  background-color: #f6f9ff;
   box-sizing: border-box;
   :global(body.dark) & {
-    background-color: #0f172ad3;
+    background-color: #0f172a;
   }
   transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-  &.active {
-    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
-    background-color: #f6f9ff;
-    :global(body.dark) & {
-      background-color: #0f172a;
-    }
-  }
+  // &.active {
+  //   box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+  //   background-color: #f6f9ff;
+  //   :global(body.dark) & {
+  //     background-color: #0f172a;
+  //   }
+  // }
   .nav-content {
     display: flex;
     align-items: center;

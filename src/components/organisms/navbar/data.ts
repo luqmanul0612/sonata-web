@@ -11,7 +11,7 @@ export const navbarData: NavbarData[] = [
     key: "home",
     name: "navbar.home",
     path: "/",
-    highlight: null,
+    highlight: "home",
   },
   {
     key: "services",
