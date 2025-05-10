@@ -28,8 +28,8 @@ export const navbarData: NavbarData[] = [
   {
     key: "clients",
     name: "navbar.clients",
-    path: "/",
-    highlight: "clients",
+    path: "/clients",
+    highlight: null,
   },
   {
     key: "news",

@@ -1,6 +1,6 @@
 import ServicesContainer from "@/containers/services";
 
-export default function Home() {
+export default function Services() {
   return (
     <>
       <ServicesContainer />
