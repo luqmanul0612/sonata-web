@@ -16,7 +16,7 @@
     align-items: center;
     @include screen.main-width;
     padding: 0 10px;
-    gap: 20px;
+    gap: 30px;
     @include screen.breakpoint-sm {
       gap: 40px;
     }
