@@ -38,7 +38,7 @@
           color: colors.$slate-100;
         }
         transition: color 0.2s ease-in-out;
-        @include screen.breakpoint-md {
+        @include screen.breakpoint-sm {
           font-size: 34px;
         }
       }
@@ -47,25 +47,34 @@
         font-weight: 700;
         color: colors.$slate-900;
         :global(body.dark) & {
-          color: colors.$slate-100;
+          color: colors.$slate-200;
         }
         margin-bottom: 5px;
         transition: color 0.2s ease-in-out;
-        @include screen.breakpoint-md {
+        @include screen.breakpoint-sm {
           font-size: 14px;
         }
       }
       .text {
         font-size: 12px;
         font-weight: 400;
-        color: colors.$slate-900;
+        color: colors.$slate-700;
         :global(body.dark) & {
-          color: colors.$slate-100;
+          color: colors.$slate-300;
         }
         transition: color 0.2s ease-in-out;
-        @include screen.breakpoint-md {
+        @include screen.breakpoint-sm {
           font-size: 14px;
         }
+      }
+    }
+    .organization-carts {
+      position: relative;
+      width: 100%;
+      margin-top: 20px;
+      aspect-ratio: 11/6;
+      .img {
+        border-radius: 8px;
       }
     }
   }

@@ -1,0 +1,32 @@
+@use "src/utils/styles/colors.scss";
+@use "src/utils/styles/screen.scss";
+
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background-color: colors.$blue-500;
+  :global(body.dark) & {
+    background-color: colors.$blue-900;
+  }
+  gap: 30px;
+  border-radius: 8px;
+  padding: 15px;
+  transition: background-color 0.2s ease-in-out;
+  @include screen.breakpoint-sm {
+    padding: 50px;
+    gap: 40px;
+  }
+  .message {
+    font-size: 12px;
+    font-weight: 600;
+    color: colors.$slate-50;
+    max-width: 652px;
+    text-align: center;
+    @include screen.breakpoint-md {
+      font-size: 14px;
+    }
+  }
+}

@@ -37,8 +37,8 @@ export const navbarData: NavbarData[] = [
     path: "/certificates",
   },
   {
-    key: "about",
+    key: "about-us",
     name: "navbar.about",
-    path: "/about",
+    path: "/about-us",
   },
 ];
