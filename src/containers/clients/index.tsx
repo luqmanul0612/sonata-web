@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import classNames from "./clients.module.scss";
-import clientsMain from "@/assets/images/clients/clients-main.webp";
+import mainImage from "@/assets/images/clients/clients-main.webp";
 import { useTranslation } from "react-i18next";
 import { clientsData } from "./data";
 
@@ -14,7 +14,7 @@ const ClientsContainer = () => {
         <div className={classNames["main-image"]}>
           <div className={classNames.image}>
             <Image
-              src={clientsMain}
+              src={mainImage}
               alt="images"
               fill
               className={classNames.img}

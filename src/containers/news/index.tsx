@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import classNames from "./news.module.scss";
-import clientsMain from "@/assets/images/news/news-main-image.webp";
+import mainImage from "@/assets/images/news/news-main-image.webp";
 import { useTranslation } from "react-i18next";
 import { newsData } from "./data";
 import * as Tabs from "@radix-ui/react-tabs";
@@ -15,7 +15,7 @@ const NewsContainer = () => {
       <div className={classNames.content}>
         <div className={classNames.image}>
           <Image
-            src={clientsMain}
+            src={mainImage}
             alt="images"
             fill
             className={classNames.img}
