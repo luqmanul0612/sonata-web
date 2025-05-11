@@ -77,5 +77,110 @@
         border-radius: 8px;
       }
     }
+    .our-teams {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      gap: 10px;
+      margin-top: 20px;
+      margin-bottom: 20px;
+      .title {
+        font-size: 25px;
+        font-weight: 700;
+        color: colors.$blue-600;
+        :global(body.dark) & {
+          color: colors.$blue-500;
+        }
+        transition: color 0.2s ease-in-out;
+        @include screen.breakpoint-sm {
+          font-size: 34px;
+        }
+      }
+      .description {
+        font-size: 16px;
+        font-weight: 500;
+        color: colors.$slate-900;
+        :global(body.dark) & {
+          color: colors.$slate-100;
+        }
+        transition: color 0.2s ease-in-out;
+        @include screen.breakpoint-sm {
+          font-size: 20px;
+        }
+      }
+      .teams-wrapper {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+        gap: 10px;
+        width: 100%;
+        margin-top: 20px;
+        @include screen.breakpoint-sm {
+          gap: 20px;
+          grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        }
+        .person {
+          display: flex;
+          flex-direction: column;
+          overflow: hidden;
+          border-radius: 12px;
+          padding: 7px;
+          gap: 7px;
+          border: 1px solid colors.$blue-600;
+          background-color: colors.$slate-100;
+          :global(body.dark) & {
+            background-color: colors.$slate-900;
+            border: 1px solid colors.$blue-950;
+          }
+          transition: background-color 0.2s ease-in-out, border 0.2s ease-in-out;
+          @include screen.breakpoint-sm {
+            padding: 15px;
+            gap: 10px;
+          }
+
+          .image {
+            position: relative;
+            width: 100%;
+            display: flex;
+            aspect-ratio: 128/100;
+            :global(body.dark) & {
+              background-color: #ffffffbf;
+            }
+            transition: background-color 0.2s ease-in-out;
+            .img {
+              border-radius: 8px;
+            }
+          }
+          .info {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+            .name {
+              font-size: 10px;
+              font-weight: 600;
+              color: colors.$slate-900;
+              :global(body.dark) & {
+                color: colors.$slate-100;
+              }
+              transition: color 0.2s ease-in-out;
+              @include screen.breakpoint-sm {
+                font-size: 12px;
+              }
+            }
+            .position {
+              font-size: 9px;
+              font-weight: 500;
+              color: colors.$slate-900;
+              :global(body.dark) & {
+                color: colors.$slate-100;
+              }
+              transition: color 0.2s ease-in-out;
+              @include screen.breakpoint-sm {
+                font-size: 11px;
+              }
+            }
+          }
+        }
+      }
+    }
   }
 }
