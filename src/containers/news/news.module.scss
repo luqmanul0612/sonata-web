@@ -51,6 +51,10 @@
           outline: none;
           cursor: pointer;
           transition: all ease-in-out 0.2s;
+          color: colors.$slate-800;
+          :global(body.dark) & {
+            color: colors.$slate-300;
+          }
           &[data-state="active"] {
             font-weight: 700;
             color: colors.$blue-600;
