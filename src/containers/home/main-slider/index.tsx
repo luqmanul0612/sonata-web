@@ -11,6 +11,7 @@ import { useEffect, useRef, useState } from "react";
 import Button from "@/components/atoms/button";
 import { useTranslation } from "react-i18next";
 import { AnimatePresence, motion } from "framer-motion";
+import { useRouter } from "nextjs-toploader/app";
 
 const sliders = [Slider1, Slider2, Slider3];
 
@@ -19,6 +20,7 @@ const MainSlider = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isMounted, setIsMounted] = useState(false);
   const interval = useRef<NodeJS.Timeout>(null);
+  const router = useRouter();
 
   const resetInterval = () => {
     clearInterval(interval.current as unknown as number);
@@ -67,7 +69,9 @@ const MainSlider = () => {
             {t("#Integrated solutions from exploration to distribution")}
           </p>
           <div className={classNames["button-group"]}>
-            <Button>{t("Our Services")}</Button>
+            <Button onClick={() => router.push("/services")}>
+              {t("Our Services")}
+            </Button>
             <Button variant="secondary-white">{t("Contact Us")}</Button>
           </div>
         </div>

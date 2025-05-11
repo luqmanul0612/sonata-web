@@ -10,9 +10,11 @@ import { useState } from "react";
 import clsx from "clsx";
 import { subserviceData } from "./data";
 import { useTranslation } from "react-i18next";
+import { useRouter } from "nextjs-toploader/app";
 
 const Services = () => {
   const { t } = useTranslation();
+  const router = useRouter();
   const [loaded, setLoaded] = useState(false);
   const [ref] = useKeenSlider<HTMLDivElement>(
     {
@@ -92,7 +94,12 @@ const Services = () => {
               style={{ objectFit: "cover" }}
             />
           </div>
-          <Button className={classNames.button}>{t("See All")}</Button>
+          <Button
+            className={classNames.button}
+            onClick={() => router.push("/services")}
+          >
+            {t("See All")}
+          </Button>
         </div>
         <div
           className={clsx(classNames["sub-services"], {

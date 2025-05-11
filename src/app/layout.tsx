@@ -4,6 +4,7 @@ import "@/utils/styles/globals.scss";
 import Navbar from "@/components/organisms/navbar";
 import I18nProvider from "./I18nProvider";
 import Footer from "@/components/organisms/footer";
+import NextTopLoader from "nextjs-toploader";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   variable: "--font-plus-jakarta-sans",
@@ -27,6 +28,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={plusJakartaSans.variable}>
+        <NextTopLoader
+          color="#3b82f6"
+          height={3}
+          showSpinner={true}
+          easing="ease"
+          zIndex={9999}
+        />
         <I18nProvider>
           <Navbar />
           {children}

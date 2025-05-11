@@ -10,9 +10,12 @@ import Button from "@/components/atoms/button";
 import "keen-slider/keen-slider.min.css";
 import { projectsData } from "./data";
 import { useTranslation } from "react-i18next";
+import { useRouter } from "nextjs-toploader/app";
 
 const Projects = () => {
   const { t } = useTranslation();
+  const router = useRouter();
+
   return (
     <section id="projects" className={classNames.main}>
       <div className={classNames.content}>
@@ -56,7 +59,12 @@ const Projects = () => {
               />
             </div>
           </div>
-          <Button className={classNames.button}>{t("See All")}</Button>
+          <Button
+            className={classNames.button}
+            onClick={() => router.push("/projects")}
+          >
+            {t("See All")}
+          </Button>
         </div>
         <div className={classNames["projects"]}>
           {projectsData.map((item) => (

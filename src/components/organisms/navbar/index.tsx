@@ -5,7 +5,7 @@ import Logo from "@/assets/icons/logo.svg";
 import LogoDark from "@/assets/icons/logo-dark.svg";
 import * as NavigationMenu from "@radix-ui/react-navigation-menu";
 import React, { FC, forwardRef, useRef, useState } from "react";
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
 import clsx from "clsx";
 import * as Collapsible from "@radix-ui/react-collapsible";
 import { NavbarData, navbarData } from "@/components/organisms/navbar/data";
@@ -17,13 +17,14 @@ import LanguageSwitcher from "@/components/atoms/language-switcher";
 import Menu from "@/assets/icons/menu.svg";
 import ChevronDown from "@/assets/icons/chevron-down.svg";
 import * as Popover from "@radix-ui/react-popover";
+import { useRouter } from "nextjs-toploader/app";
 
 const Navbar = () => {
-  const router = useRouter();
   const { colorScheme } = useColorScheme((state) => state);
   const { scrollY } = useScrollPosition();
   const [open, setOpen] = useState(false);
   const anchorRef = useRef<HTMLDivElement>(null);
+  const router = useRouter();
 
   return (
     <div
