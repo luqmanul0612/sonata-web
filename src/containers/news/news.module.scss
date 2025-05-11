@@ -16,10 +16,10 @@
     align-items: center;
     @include screen.main-width;
     padding: 0 10px;
-    gap: 30px;
+    gap: 20px;
     width: 100%;
     @include screen.breakpoint-sm {
-      gap: 40px;
+      gap: 30px;
     }
     .image {
       position: relative;
@@ -27,6 +27,53 @@
       aspect-ratio: 11/4;
       .img {
         border-radius: 8px;
+      }
+    }
+    .tabs {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      gap: 20px;
+      @include screen.breakpoint-sm {
+        gap: 30px;
+      }
+      .tabs-list {
+        display: flex;
+        gap: 10px;
+        @include screen.breakpoint-sm {
+          gap: 20px;
+        }
+        .tabs-trigger {
+          font-size: 12px;
+          font-weight: 400;
+          background-color: transparent;
+          border: none;
+          outline: none;
+          cursor: pointer;
+          transition: all ease-in-out 0.2s;
+          &[data-state="active"] {
+            font-weight: 700;
+            color: colors.$blue-600;
+            :global(body.dark) & {
+              color: colors.$blue-500;
+            }
+          }
+          @include screen.breakpoint-sm {
+            font-size: 14px;
+          }
+        }
+      }
+      .tabs-content {
+        .news-wrapper {
+          display: grid;
+          grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+          width: 100%;
+          gap: 10px;
+          @include screen.breakpoint-md {
+            grid-template-columns: repeat(auto-fill, minmax(345px, 1fr));
+            gap: 20px;
+          }
+        }
       }
     }
   }
