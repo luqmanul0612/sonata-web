@@ -1,0 +1,33 @@
+@use "src/utils/styles/colors.scss";
+@use "src/utils/styles/screen.scss";
+
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  align-items: center;
+  padding-top: 100px;
+  @include screen.breakpoint-sm {
+    padding-top: 120px;
+  }
+  .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @include screen.main-width;
+    padding: 0 10px;
+    gap: 30px;
+    width: 100%;
+    @include screen.breakpoint-sm {
+      gap: 40px;
+    }
+    .image {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 11/4;
+      .img {
+        border-radius: 8px;
+      }
+    }
+  }
+}

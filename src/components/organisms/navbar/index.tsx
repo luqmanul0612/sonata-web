@@ -4,7 +4,7 @@ import classNames from "./navbar.module.scss";
 import Logo from "@/assets/icons/logo.svg";
 import LogoDark from "@/assets/icons/logo-dark.svg";
 import * as NavigationMenu from "@radix-ui/react-navigation-menu";
-import React, { FC, forwardRef, useEffect, useRef, useState } from "react";
+import React, { FC, forwardRef, useRef, useState } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import clsx from "clsx";
 import * as Collapsible from "@radix-ui/react-collapsible";
@@ -22,40 +22,8 @@ const Navbar = () => {
   const router = useRouter();
   const { colorScheme } = useColorScheme((state) => state);
   const { scrollY } = useScrollPosition();
-  const [activeNav, setActiveNav] = useState("");
   const [open, setOpen] = useState(false);
   const anchorRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    let ticking = false;
-
-    const handleScroll = () => {
-      if (!ticking) {
-        window.requestAnimationFrame(() => {
-          const sections = document.querySelectorAll("section");
-          let current = "";
-
-          sections.forEach((section) => {
-            const rect = section.getBoundingClientRect();
-            if (
-              rect.top <= window.innerHeight / 2 &&
-              rect.bottom >= window.innerHeight / 2
-            ) {
-              current = section.id ?? "";
-            }
-          });
-
-          setActiveNav(current);
-          ticking = false;
-        });
-
-        ticking = true;
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   return (
     <div
@@ -69,11 +37,7 @@ const Navbar = () => {
         <NavigationMenu.Root className={classNames.NavigationMenuRoot}>
           <NavigationMenu.List className={classNames.NavigationMenuList}>
             {navbarData.map((item) => (
-              <NavigationMenuItem
-                key={item.key}
-                activeNav={activeNav}
-                data={item}
-              />
+              <NavigationMenuItem key={item.key} data={item} />
             ))}
             <NavigationMenu.Indicator
               className={classNames.NavigationMenuIndicator}
@@ -102,7 +66,6 @@ const Navbar = () => {
 export default Navbar;
 
 type NavigationMenuItemProps = {
-  activeNav: string;
   data: NavbarData;
 };
 
@@ -112,22 +75,11 @@ const NavigationMenuItem: FC<NavigationMenuItemProps> = (props) => {
   const { t } = useTranslation("common");
   const onClickItem = () => {
     if (!props.data.items?.length) {
-      if (pathname !== props.data.path) {
-        router.push(props.data.path);
-      } else if (props.data.highlight) {
-        const el = document.getElementById(props.data.highlight);
-        if (el)
-          window.scrollTo({
-            top: el.offsetTop - 77,
-            behavior: "smooth",
-          });
-      }
+      router.push(props.data.path);
     }
   };
 
-  const isActive = props.activeNav
-    ? props.data.key === props.activeNav
-    : props.data.path === pathname && !props.data.highlight;
+  const isActive = props.data.path === pathname;
 
   if (props.data.items?.length)
     return (
@@ -225,20 +177,10 @@ type MobileMenuItemProps = {
 };
 const MobileMenuItem: FC<MobileMenuItemProps> = (props) => {
   const router = useRouter();
-  const pathname = usePathname();
   const { t } = useTranslation();
   const onClickItem = () => {
     if (!props.data.items?.length) {
-      if (pathname !== props.data.path) {
-        router.push(props.data.path);
-      } else if (props.data.highlight) {
-        const el = document.getElementById(props.data.highlight);
-        if (el)
-          window.scrollTo({
-            top: el.offsetTop - 77,
-            behavior: "smooth",
-          });
-      }
+      router.push(props.data.path);
       props.setOpen(false);
     }
   };
