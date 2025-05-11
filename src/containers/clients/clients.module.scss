@@ -55,9 +55,9 @@
         .description {
           font-size: 12px;
           font-weight: 400;
-          color: colors.$slate-900;
+          color: colors.$slate-800;
           :global(body.dark) & {
-            color: colors.$slate-100;
+            color: colors.$slate-300;
           }
           transition: color 0.2s ease-in-out;
           @include screen.breakpoint-sm {
@@ -94,9 +94,9 @@
       .description {
         font-size: 12px;
         font-weight: 500;
-        color: colors.$slate-900;
+        color: colors.$slate-800;
         :global(body.dark) & {
-          color: colors.$slate-100;
+          color: colors.$slate-300;
         }
         transition: color 0.2s ease-in-out;
         @include screen.breakpoint-sm {
