@@ -156,7 +156,7 @@
               font-weight: 600;
               color: colors.$slate-900;
               :global(body.dark) & {
-                color: colors.$slate-300;
+                color: colors.$slate-100;
               }
               transition: color 0.2s ease-in-out;
               @include screen.breakpoint-sm {
