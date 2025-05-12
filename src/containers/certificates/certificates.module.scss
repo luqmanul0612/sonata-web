@@ -34,5 +34,74 @@
         font-size: 34px;
       }
     }
+    .certificates-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      .certificate {
+        display: flex;
+        border: 1px solid colors.$blue-600;
+        :global(body.dark) & {
+          border: 1px solid colors.$blue-500;
+        }
+        gap: 10px;
+        border-radius: 12px;
+        padding: 10px;
+        transition: background-color 0.2s ease-in-out, border 0.2s ease-in-out;
+        @include screen.breakpoint-sm {
+          padding: 30px;
+          gap: 30px;
+        }
+        .image {
+          position: relative;
+          width: 100%;
+          aspect-ratio: 4/5;
+          .img {
+            border-radius: 8px;
+          }
+        }
+        .info {
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+          .title {
+            font-size: 18px;
+            font-weight: 700;
+            color: colors.$blue-600;
+            :global(body.dark) & {
+              color: colors.$blue-500;
+            }
+            transition: color 0.2s ease-in-out;
+            @include screen.breakpoint-sm {
+              font-size: 24px;
+            }
+          }
+          .date {
+            font-size: 15px;
+            font-weight: 400;
+            color: colors.$slate-800;
+            :global(body.dark) & {
+              color: colors.$slate-300;
+            }
+            transition: color 0.2s ease-in-out;
+            @include screen.breakpoint-sm {
+              font-size: 20px;
+            }
+          }
+          .description {
+            font-size: 12px;
+            font-weight: 500;
+            color: colors.$slate-800;
+            :global(body.dark) & {
+              color: colors.$slate-300;
+            }
+            transition: color 0.2s ease-in-out;
+            @include screen.breakpoint-sm {
+              font-size: 14px;
+            }
+          }
+        }
+      }
+    }
   }
 }
