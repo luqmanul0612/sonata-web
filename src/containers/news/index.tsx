@@ -7,9 +7,14 @@ import { useTranslation } from "react-i18next";
 import { newsData } from "./data";
 import * as Tabs from "@radix-ui/react-tabs";
 import NewsCard from "@/components/molecules/news-card";
+import { useSearchParams } from "next/navigation";
+import { useRouter } from "nextjs-toploader/app";
 
 const NewsContainer = () => {
   const { t } = useTranslation();
+  const router = useRouter();
+  const searchParams = useSearchParams();
+  const category = searchParams.get("category");
   return (
     <div className={classNames.main}>
       <div className={classNames.content}>
@@ -22,7 +27,15 @@ const NewsContainer = () => {
             style={{ objectFit: "cover" }}
           />
         </div>
-        <Tabs.Root className={classNames.tabs} defaultValue="latest">
+        <Tabs.Root
+          className={classNames.tabs}
+          onValueChange={(value) => {
+            const params = new URLSearchParams();
+            params.set("category", value);
+            router.push(`?${params.toString()}`, { scroll: false });
+          }}
+          defaultValue={category || "latest"}
+        >
           <Tabs.List
             className={classNames["tabs-list"]}
             aria-label="Manage your account"
@@ -45,7 +58,7 @@ const NewsContainer = () => {
             >
               <div className={classNames["news-wrapper"]}>
                 {item.items.map((news) => (
-                  <NewsCard key={news.key} data={news} />
+                  <NewsCard key={news.key} data={news} category={item.key} />
                 ))}
               </div>
             </Tabs.Content>

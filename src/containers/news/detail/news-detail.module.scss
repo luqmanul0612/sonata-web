@@ -1,0 +1,194 @@
+@use "src/utils/styles/colors.scss";
+@use "src/utils/styles/screen.scss";
+
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  align-items: center;
+  padding-top: 100px;
+  @include screen.breakpoint-sm {
+    padding-top: 120px;
+  }
+  .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @include screen.main-width;
+    padding: 0 10px;
+    gap: 20px;
+    width: 100%;
+    @include screen.breakpoint-sm {
+      gap: 30px;
+    }
+    .header {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      justify-content: space-between;
+      gap: 10px;
+      @include screen.breakpoint-md {
+        flex-direction: row;
+      }
+      .left {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        @include screen.breakpoint-md {
+          flex-direction: row;
+          align-items: center;
+          gap: 0;
+        }
+        .back {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          border: none;
+          outline: none;
+          width: fit-content;
+          background-color: transparent;
+          color: colors.$blue-600;
+          font-size: 20px;
+          font-weight: 400;
+          border-radius: 8px;
+          padding: 3px 0;
+          padding-right: 5px;
+          text-transform: capitalize;
+          :global(body.dark) & {
+            color: colors.$blue-500;
+          }
+          transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+          cursor: pointer;
+          &:hover {
+            background-color: colors.$slate-200;
+            :global(body.dark) & {
+              background-color: colors.$slate-800;
+            }
+          }
+          @include screen.breakpoint-sm {
+            font-size: 24px;
+          }
+          .icon {
+            width: 24px;
+            min-width: 24px;
+          }
+        }
+        .title {
+          font-size: 20px;
+          font-weight: 400;
+          color: colors.$slate-800;
+          :global(body.dark) & {
+            color: colors.$slate-300;
+          }
+          transition: color 0.2s ease-in-out;
+          @include screen.breakpoint-sm {
+            font-size: 24px;
+          }
+        }
+      }
+      .right {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        .date {
+          display: flex;
+          align-items: center;
+          color: colors.$slate-50;
+          background-color: colors.$blue-600;
+          width: fit-content;
+          border-radius: 15px;
+          padding: 3px 8px;
+          gap: 5px;
+          .icon {
+            width: 24px;
+            height: 24px;
+          }
+          .text {
+            font-size: 10px;
+            font-weight: 400;
+            @include screen.breakpoint-md {
+              font-size: 11px;
+            }
+          }
+        }
+      }
+    }
+    .news-wrapper {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      border-radius: 8px;
+      overflow: hidden;
+      background-color: colors.$slate-100;
+      border: 1px solid colors.$slate-200;
+      :global(body.dark) & {
+        background-color: colors.$slate-900;
+        border: 1px solid colors.$slate-800;
+      }
+      transition: background-color 0.2s ease-in-out, border 0.2s ease-in-out;
+      .image {
+        position: relative;
+        width: 100%;
+        aspect-ratio: 11/5;
+      }
+      .content {
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+        width: 100%;
+        :global(p),
+        :global(h1),
+        :global(h2),
+        :global(h3),
+        :global(h4),
+        :global(h5),
+        :global(h6) {
+          color: colors.$slate-800;
+          :global(body.dark) & {
+            color: colors.$slate-300;
+          }
+          transition: color 0.2s ease-in-out;
+        }
+        @include screen.breakpoint-sm {
+          padding: 30px;
+        }
+      }
+    }
+    .other-news {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      width: 100%;
+      margin-top: 20px;
+      @include screen.breakpoint-sm {
+        margin-top: 40px;
+        gap: 30px;
+      }
+      .title {
+        font-size: 20px;
+        font-weight: 700;
+        color: colors.$slate-800;
+        :global(body.dark) & {
+          color: colors.$slate-300;
+        }
+        transition: color 0.2s ease-in-out;
+        @include screen.breakpoint-sm {
+          font-size: 25px;
+        }
+        @include screen.breakpoint-sm {
+          font-size: 34px;
+        }
+      }
+      .other-news-wrapper {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 10px;
+        width: 100%;
+        @include screen.breakpoint-md {
+          grid-template-columns: repeat(auto-fill, minmax(345px, 1fr));
+          gap: 20px;
+        }
+      }
+    }
+  }
+}

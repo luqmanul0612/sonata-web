@@ -82,6 +82,10 @@
       color: colors.$yellow-500;
       cursor: pointer;
       text-decoration: none;
+      border: none;
+      outline: none;
+      background-color: transparent;
+      width: fit-content;
       &:hover {
         text-decoration: underline;
       }

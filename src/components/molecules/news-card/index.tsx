@@ -5,20 +5,30 @@ import Image, { StaticImageData } from "next/image";
 import { FC } from "react";
 import Clock from "@/assets/icons/clock.svg";
 import { useTranslation } from "react-i18next";
+import { useRouter } from "nextjs-toploader/app";
 
 interface NewsCardProps {
   data: {
+    key: string;
     image: string | StaticImageData;
     date: string;
     title: string;
     content: string;
     readMore?: (key: string) => void;
   };
+  category?: string;
 }
 
 const NewsCard: FC<NewsCardProps> = (props) => {
-  const { image, date, content, title } = props.data;
+  const { image, date, content, title, key } = props.data;
   const { t } = useTranslation();
+  const router = useRouter();
+
+  const onClickMore = () => {
+    const params = new URLSearchParams();
+    if (props.category) params.set("category", props.category);
+    router.push(`/news/${key}?${params.toString()}`);
+  };
 
   return (
     <div className={classNames.main}>
@@ -32,9 +42,9 @@ const NewsCard: FC<NewsCardProps> = (props) => {
         </div>
         <p className={classNames.title}>{title}</p>
         <p className={classNames.content}>{content}</p>
-        <a href="" className={classNames.more}>
+        <button className={classNames.more} onClick={onClickMore}>
           {t("Read more")}...
-        </a>
+        </button>
       </div>
     </div>
   );
