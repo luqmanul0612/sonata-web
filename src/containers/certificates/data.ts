@@ -16,12 +16,12 @@ type CertificatesData = {
 export const certificatesData: CertificatesData = {
   "2024": [
     {
-      key: 1,
-      title: "Judul Sertifikat",
+      key: 3,
+      title: "Judul Penghargaan",
       date: "12 Mei 2025",
       description:
         "Lorem ipsum dolor sit amet consectetur. Tellus viverra a id pellentesque eget vulputate. Vitae amet justo mi magna morbi montes vel amet. Bibendum pellentesque risus metus sagittis. Nisl sed tincidunt euismod habitasse vulputate quam donec morbi dictumst. Mauris rutrum porttitor et sit eget venenatis leo et. Posuere justo sed tristique viverra a. Quam velit faucibus sed eu leo sed sit.",
-      image: certificateImage1,
+      image: certificateImage3,
     },
   ],
   "2025": [
