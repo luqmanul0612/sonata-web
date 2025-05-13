@@ -11,6 +11,7 @@ import "keen-slider/keen-slider.min.css";
 import ArrowDropLeftLine from "@/assets/icons/arrow-drop-left-line.svg";
 import ArrowDropRightLine from "@/assets/icons/arrow-drop-right-line.svg";
 import clsx from "clsx";
+import NoActivity from "@/assets/images/no-activity.svg";
 
 const yearList = new Array(10)
   .fill(0)
@@ -104,7 +105,8 @@ const CertificatesContainer = () => {
         <div className={classNames["certificates-wrapper"]}>
           {!itemList.length && (
             <div className={classNames.empty}>
-              <p className={classNames.text}>{t("No Data")}</p>
+              <NoActivity className={classNames.icon} />
+              <p className={classNames.text}>{t("No activity")}</p>
             </div>
           )}
           {itemList.map((item) => (

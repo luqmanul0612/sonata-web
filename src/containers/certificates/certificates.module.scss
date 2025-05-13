@@ -40,12 +40,21 @@
       gap: 20px;
       .empty {
         display: flex;
-        min-height: 300px;
+        min-height: 400px;
         align-items: center;
         justify-content: center;
+        flex-direction: column;
+        .icon {
+          width: 150px;
+          height: 150px;
+          @include screen.breakpoint-sm {
+            width: 200px;
+            height: 200px;
+          }
+        }
         .text {
           font-size: 15px;
-          font-weight: 500;
+          font-weight: 700;
           color: colors.$slate-700;
           :global(body.dark) & {
             color: colors.$slate-300;
