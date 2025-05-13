@@ -1,5 +1,6 @@
 import NewsDetailContainer from "@/containers/news/detail";
 import { newsData } from "./data";
+import { Suspense } from "react";
 
 export async function generateStaticParams() {
   const posts = newsData.map((post) => ({
@@ -20,7 +21,9 @@ export default async function NewsDetail({
   const { slug } = await params;
   return (
     <>
-      <NewsDetailContainer slug={slug} />
+      <Suspense fallback={<div>Loading...</div>}>
+        <NewsDetailContainer slug={slug} />
+      </Suspense>
     </>
   );
 }
