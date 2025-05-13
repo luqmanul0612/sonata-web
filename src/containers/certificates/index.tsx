@@ -100,7 +100,7 @@ const CertificatesContainer = () => {
   return (
     <div className={classNames.main}>
       <div className={classNames.content}>
-        <p className={classNames.title}>{t("Sertifikat & Penghargaan")}</p>
+        <p className={classNames.title}>{t("Certificates & Awards")}</p>
         <div className={classNames["certificates-wrapper"]}>
           {!itemList.length && (
             <div className={classNames.empty}>

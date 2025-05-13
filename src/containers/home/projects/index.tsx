@@ -5,12 +5,12 @@ import classNames from "./projects.module.scss";
 import projectPorto1 from "@/assets/images/home/project-porto-1.webp";
 import projectPorto2 from "@/assets/images/home/project-porto-2.webp";
 import projectPorto3 from "@/assets/images/home/project-porto-3.webp";
-import Map from "@/assets/icons/map.svg";
 import Button from "@/components/atoms/button";
 import "keen-slider/keen-slider.min.css";
 import { projectsData } from "./data";
 import { useTranslation } from "react-i18next";
 import { useRouter } from "nextjs-toploader/app";
+import ProjectCard from "@/components/molecules/project-card";
 
 const Projects = () => {
   const { t } = useTranslation();
@@ -68,23 +68,7 @@ const Projects = () => {
         </div>
         <div className={classNames["projects"]}>
           {projectsData.map((item) => (
-            <div key={item.key} className={classNames.project}>
-              <div className={classNames.image}>
-                <Image
-                  src={item.image}
-                  className={classNames.img}
-                  alt="images"
-                  fill
-                  style={{ objectFit: "cover" }}
-                />
-              </div>
-              <p className={classNames.title}>{item.title}</p>
-              <button className={classNames.location}>
-                <Map className={classNames.icon} />
-                <p>Lihat Lokasi</p>
-              </button>
-              <p className={classNames.description}>{item.description}</p>
-            </div>
+            <ProjectCard key={item.key} data={item} />
           ))}
         </div>
       </div>
