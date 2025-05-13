@@ -16,34 +16,99 @@
     align-items: center;
     @include screen.main-width;
     padding: 0 10px;
-    gap: 20px;
+    gap: 30px;
     width: 100%;
     @include screen.breakpoint-sm {
-      gap: 30px;
+      gap: 40px;
     }
-    .title {
-      font-size: 25px;
-      font-weight: 700;
-      color: colors.$slate-900;
-      :global(body.dark) & {
-        color: colors.$slate-100;
+    .text-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      .title {
+        font-size: 25px;
+        font-weight: 700;
+        color: colors.$slate-900;
+        :global(body.dark) & {
+          color: colors.$slate-100;
+        }
+        text-align: center;
+        transition: color 0.2s ease-in-out;
+        @include screen.breakpoint-sm {
+          font-size: 34px;
+        }
       }
+      .description {
+        font-size: 12px;
+        font-weight: 500;
+        text-align: center;
+        color: colors.$slate-800;
+        :global(body.dark) & {
+          color: colors.$slate-400;
+        }
+        transition: color 0.2s ease-in-out;
+        @include screen.breakpoint-sm {
+          font-size: 14px;
+        }
+      }
+    }
+    .image {
+      position: relative;
       width: 100%;
-      transition: color 0.2s ease-in-out;
-      @include screen.breakpoint-sm {
-        font-size: 34px;
+      aspect-ratio: 11/5;
+      .img {
+        border-radius: 8px;
       }
     }
-    .description {
-      font-size: 12px;
-      font-weight: 500;
-      color: colors.$slate-800;
-      :global(body.dark) & {
-        color: colors.$slate-400;
-      }
-      transition: color 0.2s ease-in-out;
+    .tabs {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      gap: 20px;
       @include screen.breakpoint-sm {
-        font-size: 14px;
+        gap: 30px;
+      }
+      .tabs-list {
+        display: flex;
+        gap: 10px;
+        @include screen.breakpoint-sm {
+          gap: 20px;
+        }
+        .tabs-trigger {
+          font-size: 12px;
+          font-weight: 400;
+          background-color: transparent;
+          border: none;
+          outline: none;
+          cursor: pointer;
+          transition: all ease-in-out 0.2s;
+          color: colors.$slate-800;
+          :global(body.dark) & {
+            color: colors.$slate-300;
+          }
+          &[data-state="active"] {
+            font-weight: 700;
+            color: colors.$blue-600;
+            :global(body.dark) & {
+              color: colors.$blue-500;
+            }
+          }
+          @include screen.breakpoint-sm {
+            font-size: 14px;
+          }
+        }
+      }
+      .tabs-content {
+        .projects-wrapper {
+          display: grid;
+          grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+          width: 100%;
+          gap: 10px;
+          @include screen.breakpoint-md {
+            grid-template-columns: repeat(auto-fill, minmax(370px, 1fr));
+            gap: 20px;
+          }
+        }
       }
     }
   }

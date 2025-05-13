@@ -2,6 +2,7 @@ import { FC } from "react";
 import classNames from "./project-card.module.scss";
 import Image, { StaticImageData } from "next/image";
 import Map from "@/assets/icons/map.svg";
+import clsx from "clsx";
 
 type ProjectCardProps = {
   data: {
@@ -10,12 +11,13 @@ type ProjectCardProps = {
     description: string;
     image: StaticImageData;
   };
+  className?: string;
 };
 
 const ProjectCard: FC<ProjectCardProps> = (props) => {
   const { image, description, title } = props.data;
   return (
-    <div className={classNames.main}>
+    <div className={clsx(classNames.main, props.className)}>
       <div className={classNames.image}>
         <Image
           src={image}

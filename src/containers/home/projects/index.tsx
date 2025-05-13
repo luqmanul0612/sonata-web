@@ -68,7 +68,11 @@ const Projects = () => {
         </div>
         <div className={classNames["projects"]}>
           {projectsData.map((item) => (
-            <ProjectCard key={item.key} data={item} />
+            <ProjectCard
+              key={item.key}
+              data={item}
+              className={classNames.project}
+            />
           ))}
         </div>
       </div>

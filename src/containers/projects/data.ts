@@ -1,53 +1,65 @@
-import certificateImage1 from "@/assets/images/certificates/certificate-award-1.webp";
-import certificateImage2 from "@/assets/images/certificates/certificate-award-2.webp";
-import certificateImage3 from "@/assets/images/certificates/certificate-award-3.webp";
-import { StaticImageData } from "next/image";
+import projectA from "@/assets/images/home/project-a.webp";
+import projectB from "@/assets/images/home/project-b.webp";
 
-type CertificatesData = {
-  [year: string]: {
-    key: number;
-    title: string;
-    date: string;
-    description: string;
-    image: StaticImageData;
-  }[];
-};
-
-export const certificatesData: CertificatesData = {
-  "2024": [
-    {
-      key: 3,
-      title: "Judul Penghargaan",
-      date: "12 Mei 2025",
-      description:
-        "Lorem ipsum dolor sit amet consectetur. Tellus viverra a id pellentesque eget vulputate. Vitae amet justo mi magna morbi montes vel amet. Bibendum pellentesque risus metus sagittis. Nisl sed tincidunt euismod habitasse vulputate quam donec morbi dictumst. Mauris rutrum porttitor et sit eget venenatis leo et. Posuere justo sed tristique viverra a. Quam velit faucibus sed eu leo sed sit.",
-      image: certificateImage3,
-    },
-  ],
-  "2025": [
-    {
-      key: 1,
-      title: "Judul Sertifikat",
-      date: "12 Mei 2025",
-      description:
-        "Lorem ipsum dolor sit amet consectetur. Tellus viverra a id pellentesque eget vulputate. Vitae amet justo mi magna morbi montes vel amet. Bibendum pellentesque risus metus sagittis. Nisl sed tincidunt euismod habitasse vulputate quam donec morbi dictumst. Mauris rutrum porttitor et sit eget venenatis leo et. Posuere justo sed tristique viverra a. Quam velit faucibus sed eu leo sed sit.",
-      image: certificateImage1,
-    },
-    {
-      key: 2,
-      title: "Judul Sertifikat",
-      date: "12 Mei 2025",
-      description:
-        "Lorem ipsum dolor sit amet consectetur. Tellus viverra a id pellentesque eget vulputate. Vitae amet justo mi magna morbi montes vel amet. Bibendum pellentesque risus metus sagittis. Nisl sed tincidunt euismod habitasse vulputate quam donec morbi dictumst. Mauris rutrum porttitor et sit eget venenatis leo et. Posuere justo sed tristique viverra a. Quam velit faucibus sed eu leo sed sit.",
-      image: certificateImage2,
-    },
-    {
-      key: 3,
-      title: "Judul Penghargaan",
-      date: "12 Mei 2025",
-      description:
-        "Lorem ipsum dolor sit amet consectetur. Tellus viverra a id pellentesque eget vulputate. Vitae amet justo mi magna morbi montes vel amet. Bibendum pellentesque risus metus sagittis. Nisl sed tincidunt euismod habitasse vulputate quam donec morbi dictumst. Mauris rutrum porttitor et sit eget venenatis leo et. Posuere justo sed tristique viverra a. Quam velit faucibus sed eu leo sed sit.",
-      image: certificateImage3,
-    },
-  ],
-};
+export const projectsData = [
+  {
+    key: "projects",
+    label: "Projects",
+    items: [
+      {
+        key: 1,
+        title: "Proyek A",
+        location: "",
+        description:
+          "Lorem ipsum dolor sit amet consectetur. Ornare orci amet ut nunc tempor consectetur libero. Lectus nisl morbi libero convallis vel ipsum. Quisque donec diam odio adipiscing cursus aliquam vel. At turpis nec felis sed enim. Donec velit nunc et adipiscing sit diam bibendum nunc mi. Ullamcorper nulla id a non. Ipsum lacus vivamus vitae maecenas varius. Suspendisse sagittis suspendisse cras in tempor non nunc ultricies tristique. ",
+        image: projectA,
+      },
+      {
+        key: 2,
+        title: "Proyek B",
+        location: "",
+        description:
+          "Lorem ipsum dolor sit amet consectetur. Ornare orci amet ut nunc tempor consectetur libero. Lectus nisl morbi libero convallis vel ipsum. Quisque donec diam odio adipiscing cursus aliquam vel. At turpis nec felis sed enim. Donec velit nunc et adipiscing sit diam bibendum nunc mi. Ullamcorper nulla id a non. Ipsum lacus vivamus vitae maecenas varius. Suspendisse sagittis suspendisse cras in tempor non nunc ultricies tristique. ",
+        image: projectB,
+      },
+      {
+        key: 3,
+        title: "Proyek A",
+        location: "",
+        description:
+          "Lorem ipsum dolor sit amet consectetur. Ornare orci amet ut nunc tempor consectetur libero. Lectus nisl morbi libero convallis vel ipsum. Quisque donec diam odio adipiscing cursus aliquam vel. At turpis nec felis sed enim. Donec velit nunc et adipiscing sit diam bibendum nunc mi. Ullamcorper nulla id a non. Ipsum lacus vivamus vitae maecenas varius. Suspendisse sagittis suspendisse cras in tempor non nunc ultricies tristique. ",
+        image: projectA,
+      },
+      {
+        key: 4,
+        title: "Proyek B",
+        location: "",
+        description:
+          "Lorem ipsum dolor sit amet consectetur. Ornare orci amet ut nunc tempor consectetur libero. Lectus nisl morbi libero convallis vel ipsum. Quisque donec diam odio adipiscing cursus aliquam vel. At turpis nec felis sed enim. Donec velit nunc et adipiscing sit diam bibendum nunc mi. Ullamcorper nulla id a non. Ipsum lacus vivamus vitae maecenas varius. Suspendisse sagittis suspendisse cras in tempor non nunc ultricies tristique. ",
+        image: projectB,
+      },
+    ],
+  },
+  {
+    key: "portofolio",
+    label: "Portofolio",
+    items: [
+      {
+        key: 1,
+        title: "Proyek A",
+        location: "",
+        description:
+          "Lorem ipsum dolor sit amet consectetur. Ornare orci amet ut nunc tempor consectetur libero. Lectus nisl morbi libero convallis vel ipsum. Quisque donec diam odio adipiscing cursus aliquam vel. At turpis nec felis sed enim. Donec velit nunc et adipiscing sit diam bibendum nunc mi. Ullamcorper nulla id a non. Ipsum lacus vivamus vitae maecenas varius. Suspendisse sagittis suspendisse cras in tempor non nunc ultricies tristique. ",
+        image: projectA,
+      },
+      {
+        key: 2,
+        title: "Proyek B",
+        location: "",
+        description:
+          "Lorem ipsum dolor sit amet consectetur. Ornare orci amet ut nunc tempor consectetur libero. Lectus nisl morbi libero convallis vel ipsum. Quisque donec diam odio adipiscing cursus aliquam vel. At turpis nec felis sed enim. Donec velit nunc et adipiscing sit diam bibendum nunc mi. Ullamcorper nulla id a non. Ipsum lacus vivamus vitae maecenas varius. Suspendisse sagittis suspendisse cras in tempor non nunc ultricies tristique. ",
+        image: projectB,
+      },
+    ],
+  },
+];
