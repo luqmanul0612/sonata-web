@@ -138,8 +138,12 @@
         font-size: 16px;
         font-weight: 400;
         color: colors.$slate-800;
+        background-color: colors.$slate-100;
+        border: 1px solid colors.$slate-300;
         :global(body.dark) & {
           color: colors.$slate-300;
+          background-color: colors.$slate-900;
+          border: 1px solid colors.$slate-800;
         }
         cursor: pointer;
         border-radius: 8px;
@@ -147,7 +151,6 @@
         min-height: 35px;
         justify-content: center;
         align-items: center;
-        border: 1px solid colors.$slate-300;
         transition: color 0.2s ease-in-out, border 0.2s ease-in-out;
         &.active {
           border: 1px solid colors.$blue-600;
@@ -161,8 +164,8 @@
           border: 1px solid colors.$blue-600;
           color: colors.$blue-600;
           :global(body.dark) & {
-            border: 1px solid colors.$blue-500;
-            color: colors.$blue-500;
+            border: 1px solid colors.$blue-800;
+            color: colors.$blue-800;
           }
         }
         @include screen.breakpoint-sm {
@@ -183,8 +186,8 @@
         border-radius: 100%;
         background-color: colors.$blue-600;
         :global(body.dark) & {
-          background-color: colors.$blue-500;
-          color: colors.$slate-50;
+          background-color: colors.$blue-600;
+          color: colors.$slate-300;
         }
         &:hover {
           background-color: colors.$blue-700;
@@ -196,6 +199,10 @@
           cursor: default;
           background-color: colors.$slate-300;
           color: colors.$slate-50;
+          :global(body.dark) & {
+            background-color: colors.$slate-900;
+            color: colors.$slate-700;
+          }
         }
         transition: background-color 0.2s ease-in-out;
         @include screen.breakpoint-sm {
