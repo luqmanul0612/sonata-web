@@ -67,6 +67,7 @@ const CertificatesContainer = () => {
       spacing: 10,
     },
     created(s) {
+      setCurrentSlide(s.track.details.rel);
       setPerView(
         (
           s.options.slides as unknown as {
@@ -75,8 +76,8 @@ const CertificatesContainer = () => {
         )?.perView || 0
       );
     },
-    slideChanged(slider) {
-      setCurrentSlide(slider.track.details.rel);
+    slideChanged(s) {
+      setCurrentSlide(s.track.details.rel);
     },
     updated(s) {
       setPerView(
