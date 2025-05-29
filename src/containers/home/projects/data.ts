@@ -3,7 +3,7 @@ import projectB from "@/assets/images/home/project-b.webp";
 
 export const projectsData = [
   {
-    key: 1,
+    key: "1",
     title: "Proyek A",
     location: "",
     description:
@@ -11,7 +11,7 @@ export const projectsData = [
     image: projectA,
   },
   {
-    key: 2,
+    key: "2",
     title: "Proyek B",
     location: "",
     description:
