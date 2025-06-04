@@ -77,6 +77,11 @@
       :global(body.dark) & {
         color: colors.$slate-100;
       }
+      display: -webkit-box;
+      -webkit-line-clamp: 1;
+      line-clamp: 1;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
       transition: color 0.2s ease-in-out;
       @include screen.breakpoint-md {
         font-size: 17px;

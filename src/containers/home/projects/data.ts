@@ -1,21 +1,21 @@
-import projectA from "@/assets/images/home/project-a.webp";
-import projectB from "@/assets/images/home/project-b.webp";
+import projectExample1 from "@/assets/images/projects/project-example-1.webp";
+import projectExample2 from "@/assets/images/projects/project-example-2.webp";
 
 export const projectsData = [
   {
     key: "1",
-    title: "Proyek A",
+    title: "Operasi Tambang Terpadu",
     location: "",
     description:
-      "Lorem ipsum dolor sit amet consectetur. Ornare orci amet ut nunc tempor consectetur libero. Lectus nisl morbi libero convallis vel ipsum. Quisque donec diam odio adipiscing cursus aliquam vel. At turpis nec felis sed enim. Donec velit nunc et adipiscing sit diam bibendum nunc mi. Ullamcorper nulla id a non. Ipsum lacus vivamus vitae maecenas varius. Suspendisse sagittis suspendisse cras in tempor non nunc ultricies tristique. ",
-    image: projectA,
+      "Kegiatan eksplorasi dan operasional di area tambang batu bara Kalimantan Barat dengan dukungan tenaga ahli serta penerapan standar keselamatan kerja yang ketat. ",
+    image: projectExample1,
   },
   {
     key: "2",
-    title: "Proyek B",
+    title: "Pendukung Operasional Alat Berat",
     location: "",
     description:
-      "Lorem ipsum dolor sit amet consectetur. Ornare orci amet ut nunc tempor consectetur libero. Lectus nisl morbi libero convallis vel ipsum. Quisque donec diam odio adipiscing cursus aliquam vel. At turpis nec felis sed enim. Donec velit nunc et adipiscing sit diam bibendum nunc mi. Ullamcorper nulla id a non. Ipsum lacus vivamus vitae maecenas varius. Suspendisse sagittis suspendisse cras in tempor non nunc ultricies tristique. ",
-    image: projectB,
+      "Penyediaan personel teknis dan pengawasan operasional untuk mendukung efisiensi kerja di area pertambangan terbuka daerah Sumatera Utara.",
+    image: projectExample2,
   },
 ];

@@ -152,7 +152,7 @@ const Clients = () => {
                       </div>
                     </div>
                     <div className={classNames.message}>
-                      <p>&quot;{item.message}&quot;</p>
+                      <p>{item.message}</p>
                     </div>
                   </div>
                 </div>

@@ -71,6 +71,12 @@
     @include screen.breakpoint-xl {
       font-size: 22px;
     }
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    transition: 0.2s color ease-in-out;
   }
   .location {
     display: flex;

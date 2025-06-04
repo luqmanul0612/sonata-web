@@ -86,7 +86,8 @@
           height: fit-content;
           aspect-ratio: 4/5;
           .img {
-            border-radius: 8px;
+            border-radius: 12px;
+            border: 1px solid colors.$slate-400;
           }
         }
         .info {

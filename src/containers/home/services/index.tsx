@@ -76,15 +76,7 @@ const Services = () => {
       <div className={classNames.content}>
         <div className={classNames["main-services"]}>
           <p className={classNames.title}>{t("Main Services")}</p>
-          <p className={classNames.description}>
-            Lorem ipsum dolor sit amet consectetur. Ornare orci amet ut nunc
-            tempor consectetur libero. Lectus nisl morbi libero convallis vel
-            ipsum. Quisque donec diam odio adipiscing cursus aliquam vel. At
-            turpis nec felis sed enim. Donec velit nunc et adipiscing sit diam
-            bibendum nunc mi. Ullamcorper nulla id a non. Ipsum lacus vivamus
-            vitae maecenas varius. Suspendisse sagittis suspendisse cras in
-            tempor non nunc ultricies tristique.
-          </p>
+          <p className={classNames.description}>{t("sevices_desc")}</p>
           <div className={classNames.image}>
             <Image
               src={mainService}

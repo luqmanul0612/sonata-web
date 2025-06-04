@@ -3,11 +3,11 @@
 import Image from "next/image";
 import classNames from "./clients.module.scss";
 import mainImage from "@/assets/images/clients/clients-main.webp";
-import { useTranslation } from "react-i18next";
+import { Trans, useTranslation } from "react-i18next";
 import { clientsData } from "./data";
 
 const ClientsContainer = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   return (
     <div className={classNames.main}>
       <div className={classNames.content}>
@@ -23,7 +23,15 @@ const ClientsContainer = () => {
           </div>
           <div className={classNames.text}>
             <p className={classNames.title}>{t("Our Clients,")}</p>
-            <p className={classNames.description}>{t("clients_main_text")}</p>
+            <p className={classNames.description}>
+              <Trans
+                key={i18n.language}
+                i18nKey="clients_main_text"
+                components={{
+                  br: <br />,
+                }}
+              />
+            </p>
           </div>
         </div>
         <div className={classNames.clients}>

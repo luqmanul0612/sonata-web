@@ -2,9 +2,9 @@
 
 import Image from "next/image";
 import classNames from "./projects.module.scss";
-import projectPorto1 from "@/assets/images/home/project-porto-1.webp";
-import projectPorto2 from "@/assets/images/home/project-porto-2.webp";
-import projectPorto3 from "@/assets/images/home/project-porto-3.webp";
+import projectPortoMain from "@/assets/images/projects/projects-main-image.webp";
+import portofolio1 from "@/assets/images/projects/portofolio-example-1.webp";
+import portofolio2 from "@/assets/images/projects/portofolio-example-2.webp";
 import Button from "@/components/atoms/button";
 import "keen-slider/keen-slider.min.css";
 import { projectsData } from "./data";
@@ -21,18 +21,10 @@ const Projects = () => {
       <div className={classNames.content}>
         <div className={classNames["project-porto"]}>
           <p className={classNames.title}>{t("Project & Portfolio")}</p>
-          <p className={classNames.description}>
-            Lorem ipsum dolor sit amet consectetur. Ornare orci amet ut nunc
-            tempor consectetur libero. Lectus nisl morbi libero convallis vel
-            ipsum. Quisque donec diam odio adipiscing cursus aliquam vel. At
-            turpis nec felis sed enim. Donec velit nunc et adipiscing sit diam
-            bibendum nunc mi. Ullamcorper nulla id a non. Ipsum lacus vivamus
-            vitae maecenas varius. Suspendisse sagittis suspendisse cras in
-            tempor non nunc ultricies tristique.
-          </p>
+          <p className={classNames.description}>{t("project_porto_desc")}</p>
           <div className={classNames.image}>
             <Image
-              src={projectPorto1}
+              src={projectPortoMain}
               className={classNames.img}
               alt="images"
               fill
@@ -42,7 +34,7 @@ const Projects = () => {
           <div className={classNames["other-porto"]}>
             <div>
               <Image
-                src={projectPorto2}
+                src={portofolio2}
                 className={classNames.img}
                 alt="images"
                 fill
@@ -51,7 +43,7 @@ const Projects = () => {
             </div>
             <div>
               <Image
-                src={projectPorto3}
+                src={portofolio1}
                 className={classNames.img}
                 alt="images"
                 fill

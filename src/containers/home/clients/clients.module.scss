@@ -188,6 +188,7 @@
                 color: colors.$slate-400;
               }
               text-align: justify;
+              font-style: italic;
               transition: color 0.2s ease-in-out;
               @include screen.breakpoint-md {
                 -webkit-line-clamp: 4;

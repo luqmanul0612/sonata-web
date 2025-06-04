@@ -1,4 +1,6 @@
-import clientExample from "@/assets/images/client-example.webp";
+import clientExample1 from "@/assets/images/home/client-example-1.webp";
+import clientExample2 from "@/assets/images/home/client-example-2.webp";
+import clientExample3 from "@/assets/images/home/client-example-3.webp";
 
 const data = [
   {
@@ -7,26 +9,26 @@ const data = [
     position: "Direktur",
     company: "PT. Jaya Maju Indonesia",
     message:
-      "Lorem ipsum dolor sit amet consectetur. Lacus vitae tellus elementum porttitor massa. Congue faucibus integer quam quis at amet volutpat sit facilisis.",
-    image: clientExample,
+      "“PT. Sonata Indonesia menunjukkan profesionalisme tinggi dalam setiap aspek pekerjaan. Tim mereka responsif dan selalu memberikan solusi tepat sesuai kebutuhan proyek kami.”",
+    image: clientExample1,
   },
   {
     key: 2,
-    name: "Jaxson Vetrovs",
+    name: "Anie Liona Lee",
     position: "-",
     company: "PT. Sentosa Jaya",
     message:
-      "Lorem ipsum dolor sit amet consectetur. Lacus vitae tellus elementum porttitor massa. Congue faucibus integer quam quis at amet volutpat sit facilisis.",
-    image: clientExample,
+      "“Dengan dukungan tenaga ahli dari PT. Sonata Indonesia, proses pelaksanaan proyek kami berjalan lancar dan efisien. Layanan mereka sangat bisa diandalkan.”",
+    image: clientExample2,
   },
   {
     key: 3,
-    name: "Jaxson Vetrovs",
+    name: "Diana Victoria",
     position: "Direktur",
     company: "PT. Mandiri Citra Abadi",
     message:
-      "Lorem ipsum dolor sit amet consectetur. Lacus vitae tellus elementum porttitor massa. Congue faucibus integer quam quis at amet volutpat sit facilisis.",
-    image: clientExample,
+      "“Kami sangat puas dengan kinerja dan komitmen PT. Sonata Indonesia. Mereka mampu memberikan hasil kerja yang sesuai dengan standar industri dan waktu yang ditargetkan.”",
+    image: clientExample3,
   },
 ];
 
