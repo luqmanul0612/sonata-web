@@ -5,7 +5,7 @@ import { Suspense } from "react";
 export async function generateStaticParams() {
   const posts = newsData.map((post) => ({
     ...post,
-    slug: post.key.toString(),
+    slug: post.key,
   }));
 
   return posts.map((post) => ({
