@@ -6,7 +6,7 @@ import TiktokFill from "@/assets/icons/tiktok-fill.svg";
 
 export const footerData = {
   description:
-    "Lorem ipsum dolor sit amet consectetur. Tellus viverra a id pellentesque eget vulputate. Vitae amet justo mi magna morbi montes vel amet. Bibendum pellentesque risus metus sagittis.",
+    "footer_description",
   info: [
     {
       label: "Head Office",

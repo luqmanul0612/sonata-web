@@ -21,7 +21,9 @@ const Footer = () => {
             <div className={classNames.logo} onClick={() => router.push("/")}>
               {colorScheme === "light" ? <Logo /> : <LogoDark />}
             </div>
-            <p className={classNames.description}>{footerData.description}</p>
+            <p className={classNames.description}>
+              {t(footerData.description)}
+            </p>
             <table>
               <tbody className={classNames.detail}>
                 {footerData.info.map((item) => (
