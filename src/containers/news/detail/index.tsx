@@ -23,7 +23,7 @@ const NewsDetailContainer: FC<NewsContainerProps> = ({ slug }) => {
   const searchParams = useSearchParams();
   const router = useRouter();
   const category = searchParams.get("category");
-  const detail = newsData.find((item) => item.key.toString() === slug);
+  const detail = newsData.find((item) => item.key === slug);
   const categoryLabel =
     catList.find((item) => item.key === category)?.label || "Back";
 

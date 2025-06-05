@@ -17,7 +17,7 @@ type ProjectsContainerProps = {
 const ProjectsDetailContainer: FC<ProjectsContainerProps> = ({ slug }) => {
   const { t } = useTranslation();
   const router = useRouter();
-  const detail = projectsData.find((item) => item.key.toString() === slug);
+  const detail = projectsData.find((item) => item.key === slug);
   const cleanHtml = DOMPurify.sanitize(detail?.html ?? "");
   const onClickBack = () => {
     router.back();
