@@ -1,35 +1,34 @@
 "use client";
 
 import classNames from "./projects-detail.module.scss";
-import { FC, MouseEventHandler } from "react";
-import ArrowLeft from "@/assets/icons/arrow-left.svg";
-import { useRouter } from "nextjs-toploader/app";
-import DOMPurify from "dompurify";
-import { useTranslation } from "react-i18next";
-import { projectsData } from "@/app/projects/[slug]/data";
-import Map from "@/assets/icons/map.svg";
-import Image from "next/image";
+import { FC } from "react";
+// import ArrowLeft from "@/assets/icons/arrow-left.svg";
+// import { useRouter } from "nextjs-toploader/app";
+// import DOMPurify from "dompurify";
+// import { useTranslation } from "react-i18next";
+// import Map from "@/assets/icons/map.svg";
+// import Image from "next/image";
 
 type ProjectsContainerProps = {
   slug: string;
 };
 
-const ProjectsDetailContainer: FC<ProjectsContainerProps> = ({ slug }) => {
-  const { t } = useTranslation();
-  const router = useRouter();
-  const detail = projectsData.find((item) => item.key === slug);
-  const cleanHtml = DOMPurify.sanitize(detail?.html ?? "");
-  const onClickBack = () => {
-    router.back();
-  };
+const ProjectsDetailContainer: FC<ProjectsContainerProps> = () => {
+  // const { t } = useTranslation();
+  // const router = useRouter();
+  // const detail = projectsData.find((item) => item.key === slug);
+  // const cleanHtml = DOMPurify.sanitize(detail?.html ?? "");
+  // const onClickBack = () => {
+  //   router.back();
+  // };
 
-  const onClickMap: MouseEventHandler<HTMLButtonElement> = (e) => {
-    e.stopPropagation();
-  };
+  // const onClickMap: MouseEventHandler<HTMLButtonElement> = (e) => {
+  //   e.stopPropagation();
+  // };
 
   return (
     <div className={classNames.main}>
-      {!!detail && (
+      {/* {!!detail && (
         <div className={classNames.content}>
           <div className={classNames.header}>
             <div className={classNames.left}>
@@ -69,7 +68,7 @@ const ProjectsDetailContainer: FC<ProjectsContainerProps> = ({ slug }) => {
             </div>
           </div>
         </div>
-      )}
+      )} */}
     </div>
   );
 };
