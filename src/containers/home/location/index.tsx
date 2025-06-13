@@ -17,7 +17,7 @@ const Location = () => {
             {t("location_name", { name: "PT Sonata Resources Indonesia" })}
             <span>
               {
-                " : Jl. Tebet Barat Dalam Raya No.6, RT.11/RW.2, Tebet Bar., Kec.Tebet, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12940"
+                " : Sahid Sudirman Center, 56th Floor Jl. Jend. Sudirman No.86 Jakarta 10220, Indonesia"
               }
             </span>
           </p>
