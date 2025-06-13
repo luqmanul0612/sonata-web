@@ -36,11 +36,11 @@ export const newsData = [
       {
         key: "4",
         title:
-          "Kolaborasi Strategis PT. Sonata Indonesia dengan Perusahaan Migas Terkemuka",
+          "Kolaborasi StrategisPT Sonata Resources Indonesia dengan Perusahaan Migas Terkemuka",
         date: "Senin, 27 April 2025",
         image: newsImage4,
         content:
-          "PT. Sonata Indonesia resmi menjalin kerja sama dengan salah satu perusahaan migas internasional dalam rangka penguatan operasional di wilayah Kalimantan Timur. Kolaborasi ini bertujuan meningkatkan efisiensi, kualitas sumber daya, dan penerapan teknologi terbaru di lapangan.",
+          "PT Sonata Resources Indonesia resmi menjalin kerja sama dengan salah satu perusahaan migas internasional dalam rangka penguatan operasional di wilayah Kalimantan Timur. Kolaborasi ini bertujuan meningkatkan efisiensi, kualitas sumber daya, dan penerapan teknologi terbaru di lapangan.",
       },
       {
         key: "5",
@@ -48,7 +48,7 @@ export const newsData = [
         date: "Senin, 27 April 2025",
         image: newsImage5,
         content:
-          "PT. Sonata Indonesia mengimplementasikan sistem digital berbasis IoT untuk meningkatkan pemantauan keselamatan kerja di area eksplorasi tambang. Sistem ini mampu memberikan notifikasi real-time dan laporan analitik untuk mencegah kecelakaan kerja.",
+          "PT Sonata Resources Indonesia mengimplementasikan sistem digital berbasis IoT untuk meningkatkan pemantauan keselamatan kerja di area eksplorasi tambang. Sistem ini mampu memberikan notifikasi real-time dan laporan analitik untuk mencegah kecelakaan kerja.",
       },
     ],
   },
@@ -67,11 +67,11 @@ export const newsData = [
       {
         key: "4",
         title:
-          "Kolaborasi Strategis PT. Sonata Indonesia dengan Perusahaan Migas Terkemuka",
+          "Kolaborasi StrategisPT Sonata Resources Indonesia dengan Perusahaan Migas Terkemuka",
         date: "Senin, 27 April 2025",
         image: newsImage4,
         content:
-          "PT. Sonata Indonesia resmi menjalin kerja sama dengan salah satu perusahaan migas internasional dalam rangka penguatan operasional di wilayah Kalimantan Timur. Kolaborasi ini bertujuan meningkatkan efisiensi, kualitas sumber daya, dan penerapan teknologi terbaru di lapangan.",
+          "PT Sonata Resources Indonesia resmi menjalin kerja sama dengan salah satu perusahaan migas internasional dalam rangka penguatan operasional di wilayah Kalimantan Timur. Kolaborasi ini bertujuan meningkatkan efisiensi, kualitas sumber daya, dan penerapan teknologi terbaru di lapangan.",
       },
     ],
   },
@@ -90,11 +90,11 @@ export const newsData = [
       {
         key: "4",
         title:
-          "Kolaborasi Strategis PT. Sonata Indonesia dengan Perusahaan Migas Terkemuka",
+          "Kolaborasi StrategisPT Sonata Resources Indonesia dengan Perusahaan Migas Terkemuka",
         date: "Senin, 27 April 2025",
         image: newsImage4,
         content:
-          "PT. Sonata Indonesia resmi menjalin kerja sama dengan salah satu perusahaan migas internasional dalam rangka penguatan operasional di wilayah Kalimantan Timur. Kolaborasi ini bertujuan meningkatkan efisiensi, kualitas sumber daya, dan penerapan teknologi terbaru di lapangan.",
+          "PT Sonata Resources Indonesia resmi menjalin kerja sama dengan salah satu perusahaan migas internasional dalam rangka penguatan operasional di wilayah Kalimantan Timur. Kolaborasi ini bertujuan meningkatkan efisiensi, kualitas sumber daya, dan penerapan teknologi terbaru di lapangan.",
       },
       {
         key: "5",
@@ -102,7 +102,7 @@ export const newsData = [
         date: "Senin, 27 April 2025",
         image: newsImage5,
         content:
-          "PT. Sonata Indonesia mengimplementasikan sistem digital berbasis IoT untuk meningkatkan pemantauan keselamatan kerja di area eksplorasi tambang. Sistem ini mampu memberikan notifikasi real-time dan laporan analitik untuk mencegah kecelakaan kerja.",
+          "PT Sonata Resources Indonesia mengimplementasikan sistem digital berbasis IoT untuk meningkatkan pemantauan keselamatan kerja di area eksplorasi tambang. Sistem ini mampu memberikan notifikasi real-time dan laporan analitik untuk mencegah kecelakaan kerja.",
       },
     ],
   },
@@ -113,11 +113,11 @@ export const newsData = [
       {
         key: "4",
         title:
-          "Kolaborasi Strategis PT. Sonata Indonesia dengan Perusahaan Migas Terkemuka",
+          "Kolaborasi StrategisPT Sonata Resources Indonesia dengan Perusahaan Migas Terkemuka",
         date: "Senin, 27 April 2025",
         image: newsImage4,
         content:
-          "PT. Sonata Indonesia resmi menjalin kerja sama dengan salah satu perusahaan migas internasional dalam rangka penguatan operasional di wilayah Kalimantan Timur. Kolaborasi ini bertujuan meningkatkan efisiensi, kualitas sumber daya, dan penerapan teknologi terbaru di lapangan.",
+          "PT Sonata Resources Indonesia resmi menjalin kerja sama dengan salah satu perusahaan migas internasional dalam rangka penguatan operasional di wilayah Kalimantan Timur. Kolaborasi ini bertujuan meningkatkan efisiensi, kualitas sumber daya, dan penerapan teknologi terbaru di lapangan.",
       },
     ],
   },

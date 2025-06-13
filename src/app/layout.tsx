@@ -12,9 +12,9 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "PT. Sonata Indonesia",
+  title: "PT Sonata Resources Indonesia",
   description:
-    "PT. Sonata Indonesia provides professional oil & gas resource consulting services, delivering quality solutions tailored to client needs.",
+    "PT Sonata Resources Indonesia provides professional oil & gas resource consulting services, delivering quality solutions tailored to client needs.",
   icons: {
     icon: "/favicon.svg",
   },

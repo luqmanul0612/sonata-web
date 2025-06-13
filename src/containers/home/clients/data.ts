@@ -9,7 +9,7 @@ const data = [
     position: "Direktur",
     company: "PT. Jaya Maju Indonesia",
     message:
-      "“PT. Sonata Indonesia menunjukkan profesionalisme tinggi dalam setiap aspek pekerjaan. Tim mereka responsif dan selalu memberikan solusi tepat sesuai kebutuhan proyek kami.”",
+      "“PT Sonata Resources Indonesia menunjukkan profesionalisme tinggi dalam setiap aspek pekerjaan. Tim mereka responsif dan selalu memberikan solusi tepat sesuai kebutuhan proyek kami.”",
     image: clientExample1,
   },
   {
@@ -18,7 +18,7 @@ const data = [
     position: "-",
     company: "PT. Sentosa Jaya",
     message:
-      "“Dengan dukungan tenaga ahli dari PT. Sonata Indonesia, proses pelaksanaan proyek kami berjalan lancar dan efisien. Layanan mereka sangat bisa diandalkan.”",
+      "“Dengan dukungan tenaga ahli dariPT Sonata Resources Indonesia, proses pelaksanaan proyek kami berjalan lancar dan efisien. Layanan mereka sangat bisa diandalkan.”",
     image: clientExample2,
   },
   {
@@ -27,7 +27,7 @@ const data = [
     position: "Direktur",
     company: "PT. Mandiri Citra Abadi",
     message:
-      "“Kami sangat puas dengan kinerja dan komitmen PT. Sonata Indonesia. Mereka mampu memberikan hasil kerja yang sesuai dengan standar industri dan waktu yang ditargetkan.”",
+      "“Kami sangat puas dengan kinerja dan komitmenPT Sonata Resources Indonesia. Mereka mampu memberikan hasil kerja yang sesuai dengan standar industri dan waktu yang ditargetkan.”",
     image: clientExample3,
   },
 ];

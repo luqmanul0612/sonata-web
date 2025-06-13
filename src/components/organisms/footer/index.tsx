@@ -31,7 +31,7 @@ const Footer = () => {
                     <td>
                       <p className={classNames.label}>{t(item.label)}</p>
                     </td>
-                    <td>{item.value}</td>
+                    <td>{t(item.value)}</td>
                   </tr>
                 ))}
               </tbody>

@@ -41,7 +41,7 @@ export const projectsData = [
         title: "Operasi dan Pemeliharaan Fasilitas LNG – Papua Barat",
         location: "",
         description:
-          "Berlokasi di kawasan pesisir Papua Barat, proyek ini mencakup layanan operasi dan pemeliharaan fasilitas gas alam cair (LNG) yang mendukung kebutuhan energi dalam negeri dan ekspor. PT. Sonata Indonesia berperan dalam penyediaan tenaga ahli bersertifikasi internasional, pengelolaan sistem keselamatan kerja berbasis digital, serta pemantauan performa peralatan secara real-time untuk menjamin kelangsungan produksi. Proyek ini juga turut mendukung program pengembangan masyarakat di sekitar area operasional.",
+          "Berlokasi di kawasan pesisir Papua Barat, proyek ini mencakup layanan operasi dan pemeliharaan fasilitas gas alam cair (LNG) yang mendukung kebutuhan energi dalam negeri dan ekspor.PT Sonata Resources Indonesia berperan dalam penyediaan tenaga ahli bersertifikasi internasional, pengelolaan sistem keselamatan kerja berbasis digital, serta pemantauan performa peralatan secara real-time untuk menjamin kelangsungan produksi. Proyek ini juga turut mendukung program pengembangan masyarakat di sekitar area operasional.",
         image: projectExample4,
       },
     ],
@@ -55,7 +55,7 @@ export const projectsData = [
         title: "Operasional Tenaga Ahli di Blok Migas Kalimantan Timur",
         location: "",
         description:
-          "PT. Sonata Indonesia menyediakan tenaga profesional bersertifikasi untuk mendukung operasional lapangan di salah satu blok migas terbesar di Kalimantan Timur. Tim kami terlibat dalam pengawasan harian, pemeliharaan fasilitas, hingga penerapan sistem keselamatan kerja sesuai standar internasional.",
+          "PT Sonata Resources Indonesia menyediakan tenaga profesional bersertifikasi untuk mendukung operasional lapangan di salah satu blok migas terbesar di Kalimantan Timur. Tim kami terlibat dalam pengawasan harian, pemeliharaan fasilitas, hingga penerapan sistem keselamatan kerja sesuai standar internasional.",
         image: portofolioExample1,
       },
       {
@@ -63,7 +63,7 @@ export const projectsData = [
         title: "Layanan Pemeliharaan Fasilitas LNG Papua Barat",
         location: "",
         description:
-          "PT. Sonata Indonesia menjalankan proyek pemeliharaan fasilitas pengolahan LNG dengan cakupan inspeksi berkala, perbaikan sistem mekanik dan kelistrikan, serta dokumentasi operasional berbasis digital. Proyek ini berjalan dengan zero accident dan memenuhi target waktu yang ditetapkan klien.",
+          "PT Sonata Resources Indonesia menjalankan proyek pemeliharaan fasilitas pengolahan LNG dengan cakupan inspeksi berkala, perbaikan sistem mekanik dan kelistrikan, serta dokumentasi operasional berbasis digital. Proyek ini berjalan dengan zero accident dan memenuhi target waktu yang ditetapkan klien.",
         image: portofolioExample2,
       },
       {

@@ -5,25 +5,28 @@ import FacebookFill from "@/assets/icons/facebook-circle-fill.svg";
 import TiktokFill from "@/assets/icons/tiktok-fill.svg";
 
 export const footerData = {
-  description:
-    "footer_description",
+  description: "footer_description",
   info: [
     {
       label: "Head Office",
       value:
-        "Jl. Tebet Barat Dalam Raya No.6, RT.11/RW.2, Tebet Bar., Kec. Tebet, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12810",
+        "Sahid Sudirman Center, 56th Floor Jl. Jend. Sudirman No.86 Jakarta 10220, Indonesia",
     },
     {
-      label: "Telephone",
-      value: "0812323423",
+      label: "Phone",
+      value: "(62-21) 8063 1888  ",
     },
     {
       label: "Email",
-      value: "KvZoC@example.com",
+      value: "marketing@sonata-indonesia.com",
     },
     {
       label: "Opening Hours",
-      value: "Senin - Jumat: 08:00 - 17:00",
+      value: "opening_hours",
+    },
+    {
+      label: "Fax",
+      value: "(62-21) 8063 1999",
     },
   ],
   copyright: <>Copyright &copy; 2023 | PT Sonata Resources Indonesia</>,
