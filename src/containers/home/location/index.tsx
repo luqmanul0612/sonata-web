@@ -22,7 +22,14 @@ const Location = () => {
             </span>
           </p>
         </div>
-        <div className={classNames.map}>
+        <div
+          className={classNames.map}
+          onClick={() =>
+            window.open(
+              "https://www.google.com/maps/place/CEO+SUITE+Sahid+Sudirman+Center+56th+fl/@-6.2111015,106.8186936,18z/data=!4m6!3m5!1s0x2e69f4026d88f493:0x8ad09c612d1b433c!8m2!3d-6.2109275!4d106.8185581!16s%2Fg%2F11cryvb8b8?entry=ttu&g_ep=EgoyMDI1MDYxMC4xIKXMDSoASAFQAw%3D%3D"
+            )
+          }
+        >
           <Image
             src={mapExample}
             className={classNames.img}
