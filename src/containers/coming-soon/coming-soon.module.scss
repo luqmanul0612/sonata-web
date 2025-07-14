@@ -1,0 +1,89 @@
+@use "src/utils/styles/colors.scss";
+@use "src/utils/styles/screen.scss";
+
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  align-items: center;
+  padding-top: 100px;
+  @include screen.breakpoint-sm {
+    padding-top: 120px;
+  }
+  .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @include screen.main-width;
+    padding: 0 10px;
+    width: 100%;
+    min-height: 400px;
+    justify-content: center;
+    width: 100%;
+    max-width: 800px;
+    border-radius: 12px;
+    position: relative;
+    .circle {
+      position: absolute;
+      content: "";
+      left: 50%;
+      top: 50%;
+      transform: translate(calc(-50% - 100px), calc(-50% - 100px));
+      z-index: 1;
+      min-height: 400px;
+      min-width: 400px;
+      background-color: transparent;
+      border-radius: 100%;
+      transition: background 0.2s ease-in-out;
+      background: radial-gradient(#167af339, transparent, transparent);
+      :global(body.dark) & {
+        background: radial-gradient(#9daddb31, transparent, transparent);
+      }
+      @include screen.breakpoint-md {
+        transform: translate(calc(-50% - 150px), calc(-50% - 100px));
+      }
+    }
+    .coming {
+      font-size: 35px;
+      color: colors.$slate-800;
+      :global(body.dark) & {
+        color: colors.$slate-300;
+      }
+      z-index: 1;
+      font-weight: 100;
+      margin: 0;
+      line-height: 1;
+      transition: 0.2s color ease-in-out;
+      @include screen.breakpoint-md {
+        font-size: 60px;
+      }
+    }
+    .soon {
+      font-size: 35px;
+      color: colors.$slate-700;
+      :global(body.dark) & {
+        color: colors.$slate-400;
+      }
+      z-index: 1;
+      font-weight: 100;
+      line-height: 1;
+      transition: 0.2s color ease-in-out;
+      @include screen.breakpoint-md {
+        font-size: 60px;
+      }
+    }
+    .text {
+      font-size: 14px;
+      color: colors.$slate-800;
+      :global(body.dark) & {
+        color: colors.$slate-300;
+      }
+      font-weight: 300;
+      margin: 20px 0 40px;
+      transition: 0.2s color ease-in-out;
+      @include screen.breakpoint-md {
+        font-size: 18px;
+      }
+    }
+  }
+}

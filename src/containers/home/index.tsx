@@ -1,5 +1,4 @@
 import AboutCompany from "./about-company";
-import Clients from "./clients";
 import MainSlider from "./main-slider";
 import News from "./news";
 import Projects from "./projects";
@@ -15,7 +14,7 @@ const HomeContainer = () => {
       <AboutCompany />
       <Services />
       <Projects />
-      <Clients />
+      {/* <Clients /> */}
       <Offers />
       <News />
       <Location />

@@ -6,7 +6,6 @@ import mainImage from "@/assets/images/about/about-main-image.svg?url";
 import organizationCarts from "@/assets/images/about/organization-carts.webp";
 import { Trans, useTranslation } from "react-i18next";
 import GetQuote from "@/components/molecules/get-quote";
-import { teamsData } from "./data";
 
 const AboutUsContainer = () => {
   const { i18n } = useTranslation();
@@ -43,7 +42,7 @@ const AboutUsContainer = () => {
             style={{ objectFit: "cover" }}
           />
         </div>
-        <div className={classNames["our-teams"]}>
+        {/* <div className={classNames["our-teams"]}>
           <p className={classNames.title}>{i18n.t("Our Teams")}</p>
           <p className={classNames.description}>
             {i18n.t("We have many teams from different divisions")}
@@ -67,7 +66,7 @@ const AboutUsContainer = () => {
               </div>
             ))}
           </div>
-        </div>
+        </div> */}
         <GetQuote />
       </div>
     </div>
