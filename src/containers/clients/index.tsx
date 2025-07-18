@@ -36,37 +36,10 @@ const ClientsContainer = () => {
         </div>
         <div className={classNames.clients}>
           <div className={classNames.header}>
-            <p className={classNames.title}>{t("Domestic Clients")}</p>
-            <p className={classNames.description}>
-              {t("We have worked with many partners in Indonesia")}
-            </p>
+            <p className={classNames.title}>{t("Clients")}</p>
           </div>
           <div className={classNames["clients-wrapper"]}>
-            {clientsData.domestic.map((item) => (
-              <div className={classNames.client} key={item.key}>
-                <div className={classNames.image}>
-                  <Image
-                    src={item.image}
-                    alt="images"
-                    fill
-                    className={classNames.img}
-                    style={{ objectFit: "contain" }}
-                  />
-                </div>
-                <p className={classNames.name}>{item.name}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-        <div className={classNames.clients}>
-          <div className={classNames.header}>
-            <p className={classNames.title}>{t("Overseas Clients")}</p>
-            <p className={classNames.description}>
-              {t("We have worked with several international partners")}
-            </p>
-          </div>
-          <div className={classNames["clients-wrapper"]}>
-            {clientsData.overseas.map((item) => (
+            {clientsData.map((item) => (
               <div className={classNames.client} key={item.key}>
                 <div className={classNames.image}>
                   <Image
